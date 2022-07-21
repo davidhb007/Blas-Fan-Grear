@@ -1,0 +1,298 @@
+<div class="Mobile">
+  {%- if collection.title contains 'High School' -%}
+    {%- assign collection_title = collection.title | remove: 'High School' -%}
+  {%- else if collection.title contains 'HS Fan Store' -%}
+    {%- assign collection_title = collection.title | remove: 'HS Fan Store' -%}
+  {%- endif -%}
+  <div class="video_collection_title Text--alignCenter">{%- if collection.id == 276535115953 -%}Hope International High School{%- else -%}{{ collection_title }} High School{%- endif -%}</div>
+</div>
+<section class="Section" id="section-{{ section.id }}">
+  <div class="Container">
+    <div class="team-store-video-inner d-flex {% if section.settings.section_size != 'normal' %}Section--{{ section.settings.section_size }}{% endif %}">
+      
+      <div class="Videoblock_Wrapper">
+        <div class="ImageHero">
+          <div class="ImageHero__ImageWrapper">
+            <div class="Desktop ImageHero__Image Image--lazyLoad Image--zoomOut"
+                 data-optimumx="1.4"
+                 data-expand="-150"
+                 {% if section.settings.image %}data-bgset="{{ section.settings.image | img_url: '800x600' }} 750w, {{ section.settings.image | img_url: '1000x' }} 1000w, {{ section.settings.image | img_url: '1500x' }} 1500w"{% endif %}>
+            </div>
+
+            <noscript>
+              <div class="ImageHero__Image" style="background-image: url({{ section.settings.image | img_url: '1000x' }})"></div>
+            </noscript>
+
+            <div class="Mobile ImageHero__Image Image--lazyLoad Image--zoomOut"
+                 data-optimumx="1.4"
+                 data-expand="-150"
+                 {% if section.settings.mobile_image %}data-bgset="{{ section.settings.mobile_image | img_url: mobile_size, crop: 'center' }} 750w, {{ section.settings.mobile_image | img_url: '600x' }} 600w, {{ section.settings.mobile_image | img_url: '600x' }} 600w"{% endif %}>
+            </div>
+
+            <noscript>
+              <div class="ImageHero__Image" style="background-image: url({{ section.settings.mobile_image | img_url: '600x' }})"></div>
+            </noscript>
+            
+            {%- unless section.settings.image != blank -%}
+              <div class="PlaceholderBackground">
+                {{ 'lifestyle-2' | placeholder_svg_tag: 'PlaceholderBackground__Svg PlaceholderSvg--dark' }}
+              </div>
+            {%- endunless -%}
+            
+            {%- if section.settings.video_label != blank -%}
+              <div class="videl_label p-absolute">
+                <span>{{ section.settings.video_label | escape }}</span>
+              </div>
+            {%- endif -%}            
+          </div>
+
+          <div class="ImageHero__ContentOverlay p-relative">
+            <header class="SectionHeader">
+              <div class="SectionHeader__IconHolder">
+                <button type="button" class="Video__PlayButton" data-action="open-modal" aria-label="{{ 'home_page.featured_video.play' | t }}" aria-controls="modal-{{ section.id }}">{% render 'icon' with 'play' %}</button>
+              </div>
+            </header>
+          </div>
+        </div>    
+      </div>
+
+      <div class="Imageblock_Wrapper">
+        <div class="Imageblock_Wrapper_Inner">
+          <div class="Imageblock_TextWrapper">
+            {%- if section.settings.title != blank -%}
+              <h3 class="Heading u-h3 first">{{ section.settings.title | escape }}</h3>
+            {%- endif -%}   
+
+            {%- if section.settings.title_1 != blank -%}
+              <h3 class="Heading u-h2 second">{{ section.settings.title_1 | escape }}</h3>
+            {%- endif -%}
+
+            {%- if section.settings.title_2 != blank -%}
+              <h3 class="Heading u-h3 third">{{ section.settings.title_2 | escape }}</h3>
+            {%- endif -%}          
+          </div> 
+          
+          {%- if section.settings.image_1 != blank or section.settings.mobile_image_1 != blank -%}
+            <div class="Imageblock_ImageWrapper">
+              {%- if section.settings.image_1 != blank -%}
+                <div class="Desktop">
+                  {%- capture supported_sizes -%}{%- render 'image-size', sizes: '400,600,700,800,900,1000,1200', image: section.settings.image_1 -%}{%- endcapture -%}
+
+                  <div class="AspectRatio" style="max-width: {{ section.settings.image_1.width }}px; --aspect-ratio: {{ section.settings.image_1.aspect_ratio }}">
+                    {%- assign image_url = section.settings.image_1 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                    <img class="Image--lazyLoad" data-src="{{ image_url }}" data-expand="-200" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ section.settings.image_1.alt | escape }}">
+
+                    <noscript>
+                      <img src="{{ section.settings.image_1 | img_url: '800x' }}" alt="{{ section.settings.image_1.alt | escape }}">
+                    </noscript>
+                  </div>
+                </div>
+              {%- endif -%}
+
+              {%- if section.settings.mobile_image_1 != blank -%}
+                <div class="Mobile">
+                  {%- capture supported_sizes_1 -%}{%- render 'image-size', sizes: '400,600,700,800,900,1000,1200', image: section.settings.mobile_image_1 -%}{%- endcapture -%}
+
+                  <div class="AspectRatio" style="max-width: {{ section.settings.mobile_image_1.width }}px; --aspect-ratio: {{ section.settings.mobile_image_1.aspect_ratio }}">
+                    {%- assign image_url = section.settings.mobile_image_1 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                    <img class="Image--lazyLoad" data-src="{{ image_url }}" data-expand="-200" data-widths="[{{ supported_sizes_1 }}]" data-sizes="auto" alt="{{ section.settings.mobile_image_1.alt | escape }}">
+
+                    <noscript>
+                      <img src="{{ section.settings.mobile_image_1 | img_url: '500x' }}" alt="{{ section.settings.mobile_image_1.alt | escape }}">
+                    </noscript>
+                  </div>
+                </div>
+              {%- endif -%}            
+            </div>
+          {%- endif -%}          
+        </div>        
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div id="modal-{{ section.id }}" class="Modal Modal--fullScreen Modal--videoContent" aria-hidden="true" role="dialog" data-scrollable>
+  <div class="Modal__Content">
+    <div class="Container Container--narrow">
+      <div class="VideoWrapper">
+        {% if section.settings.video_url.type == 'youtube' %}
+          <iframe class="Image--lazyLoad" data-src="//www.youtube.com/embed/{{ section.settings.video_url.id }}?autoplay=0&showinfo=0&controls=1&rel=0&modestbranding=1" frameborder="0" allowfullscreen></iframe>
+        {% elsif section.settings.video_url.type == 'vimeo' %}
+          <iframe class="Image--lazyLoad" data-src="//player.vimeo.com/video/{{ section.settings.video_url.id }}?autoplay=0&portrait=0&byline=0&color={{ settings.accent_color | remove_first: '#' }}" frameborder="0"></iframe>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <button class="Modal__Close Modal__Close--outside" data-animate-bottom data-action="close-modal">{% render 'icon' with 'close' %}</button>
+</div>
+
+<style>
+  #section-{{ section.id }} .Heading.first{
+    color: {{ section.settings.title_color }};
+  }
+  .video_collection_title{
+    color: {{ section.settings.title_color }};
+  }
+  #section-{{ section.id }} .Heading.second{
+    color: {{ section.settings.title_1_color }};
+  }
+  #section-{{ section.id }} .Heading.third{
+    color: {{ section.settings.title_2_color }};
+  }
+  #section-{{ section.id }} .videl_label span{
+    background-color: {{ section.settings.video_label_bg_color }};
+    color: {{ section.settings.video_label_color }};
+  }
+  {%- if section.settings.border_bottom_color != blank -%}
+    #section-{{ section.id }}{
+      border-bottom:30px solid {{ section.settings.border_bottom_color }};
+    }
+  {%- endif -%}
+</style>
+
+{% if section.settings.bg_img != blank %}
+  {% assign image_url = section.settings.bg_img | img_url: '1920x1080' %}
+  {% style%}
+    #shopify-section-{{ section.id }}{
+      background-image: url({{ image_url }});
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  {% endstyle %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Video section",
+  "class": "team-store-video-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "border_bottom_color",
+      "label": "Border bottom Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_img",
+      "label": "Background Image",
+      "info": "1920 x 1080px .jpg recommended."
+    },
+    {
+      "type": "select",
+      "id": "section_size",
+      "label": "Section size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "large"
+    },
+    {
+      "type": "header",
+      "content": "Video block"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image(Desktop)",
+      "info": "1500 x 800px .jpg recommended."
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Image(mobile)",
+      "info": "600 x 600px .jpg recommended."
+    },
+    {
+      "type": "video_url",
+      "accept": ["vimeo", "youtube"],
+      "id": "video_url",
+      "label": "Video URL",
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+    },
+    {
+      "type": "text",
+      "id": "video_label",
+      "label": "Video label",
+      "default": "Your video"
+    },
+    {
+      "type": "color",
+      "id": "video_label_bg_color",
+      "label": "Label BG Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "video_label_color",
+      "label": "Label Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Image Text block"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Your video"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "title_1",
+      "label": "Title 1"
+    },
+    {
+      "type": "color",
+      "id": "title_1_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "Title2 ",
+      "default": "Title"
+    },
+    {
+      "type": "color",
+      "id": "title_2_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image(Desktop)",
+      "info": "800 x 800px .jpg recommended."
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image_1",
+      "label": "Image(mobile)",
+      "info": "500 x 500px .jpg recommended."
+    }
+  ]
+}
+{% endschema %}

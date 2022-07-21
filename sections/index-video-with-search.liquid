@@ -1,0 +1,274 @@
+<section class="Section" id="section-{{ section.id }}">
+  <div class="Container">
+    <div class="index-video-with-search-inner d-flex {% if section.settings.section_size != 'normal' %}Section--{{ section.settings.section_size }}{% endif %}">
+      <div class="Searchblock_Wrapper">
+
+        <header class="SectionHeader">
+          {%- if section.settings.title != blank -%}
+            <h2 class="SectionHeader__Heading Heading u-h1">{{ section.settings.title | escape }}</h2>
+          {%- endif -%}   
+
+          {%- if section.settings.subheading != blank -%}
+            <h3 class="SectionHeader__SubHeading Heading u-h6">{{ section.settings.subheading | escape }}</h3>
+          {%- endif -%} 
+        </header> 
+
+        {%- if section.settings.enable_search -%}        
+          <div id="Search" class="Search index" aria-hidden="true">
+            {%- if section.settings.search_title != blank -%}
+            <p class="search-title">{{ section.settings.search_title | escape }}</p>
+            {%- endif -%}            
+            <div class="Search__Inner">
+              <div class="Search__SearchBar">
+                <form action="{{ routes.search_url }}" name="GET" role="search" class="Search__Form">
+                  <div class="Search__InputIconWrapper">
+                    <span class="hidden-tablet-and-up">{%- render 'icon' with 'search' -%}</span>
+                    <span class="hidden-phone">{%- render 'icon' with 'search-desktop' -%}</span>
+                  </div>
+
+                  <input type="search" class="Search__Input Heading" name="q" autocomplete="off" autocorrect="off" autocapitalize="off" aria-label="{{ 'search.general.input_placeholder' | t }}" placeholder="Find Your Team/School" autofocus>
+                  <input type="hidden" name="type" value="product">
+                </form>
+
+                <button class="Search__Close Link Link--primary" data-action="close-search" aria-label="{{ 'header.navigation.close_search' | t }}">{% render 'icon' with 'close' %}</button>
+              </div>
+
+              <div class="Search__Results" aria-hidden="true">
+                {%- if settings.search_mode != 'product' -%}
+                  <div class="PageLayout PageLayout--breakLap">
+                    <div class="PageLayout__Section"></div>
+                    <div class="PageLayout__Section PageLayout__Section--secondary"></div>
+                  </div>
+                {%- endif -%}
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.btn_url_1 != blank or section.settings.btn_label_1 != blank or section.settings.btn_url_2 != blank or section.settings.btn_label_2 != blank -%}
+          <div class="Btn_Wrapper d-flex">
+            {%- if section.settings.btn_url_1 != blank or section.settings.btn_label_1 != blank -%}
+              <div><a class="Button Button--primary" href="{{ section.settings.btn_url_1 | escape }}">{{ section.settings.btn_label_1 | escape }}</a></div>  
+            {%- endif -%}
+            {%- if section.settings.btn_url_2 != blank or section.settings.btn_label_2 != blank -%}
+              <div><a class="Button Second" href="{{ section.settings.btn_url_2 | escape }}">{{ section.settings.btn_label_2 | escape }}</a></div>  
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+      </div>
+      <div class="Videoblock_Wrapper">
+        <div class="ImageHero">
+          <div class="ImageHero__ImageWrapper">
+            <div class="Desktop ImageHero__Image Image--lazyLoad Image--zoomOut"
+                 data-optimumx="1.4"
+                 data-expand="-150"
+                 {% if section.settings.image %}data-bgset="{{ section.settings.image | img_url: mobile_size, crop: 'center' }} 750w, {{ section.settings.image | img_url: '1000x' }} 1000w, {{ section.settings.image | img_url: '1500x' }} 1500w"{% endif %}>
+            </div>
+
+            <noscript>
+              <div class="ImageHero__Image" style="background-image: url({{ section.settings.image | img_url: '1000x' }})"></div>
+            </noscript>
+
+            <div class="Mobile ImageHero__Image Image--lazyLoad Image--zoomOut"
+                 data-optimumx="1.4"
+                 data-expand="-150"
+                 {% if section.settings.mobile_image %}data-bgset="{{ section.settings.mobile_image | img_url: mobile_size, crop: 'center' }} 750w, {{ section.settings.mobile_image | img_url: '600x' }} 600w, {{ section.settings.mobile_image | img_url: '600x' }} 600w"{% endif %}>
+            </div>
+
+            <noscript>
+              <div class="ImageHero__Image" style="background-image: url({{ section.settings.mobile_image | img_url: '600x' }})"></div>
+            </noscript>
+            
+            {%- unless section.settings.image != blank -%}
+              <div class="PlaceholderBackground">
+                {{ 'lifestyle-2' | placeholder_svg_tag: 'PlaceholderBackground__Svg PlaceholderSvg--dark' }}
+              </div>
+            {%- endunless -%}
+          </div>
+
+          <div class="ImageHero__ContentOverlay">
+            <header class="SectionHeader">
+              <div class="SectionHeader__IconHolder">
+                <button type="button" class="Video__PlayButton" data-action="open-modal" aria-label="{{ 'home_page.featured_video.play' | t }}" aria-controls="modal-{{ section.id }}">{% render 'icon' with 'play' %}</button>
+              </div>
+            </header>
+          </div>
+        </div>    
+      </div>      
+    </div>
+  </div>
+</section>
+
+<div id="modal-{{ section.id }}" class="Modal Modal--fullScreen Modal--videoContent" aria-hidden="true" role="dialog" data-scrollable>
+  <div class="Modal__Content">
+    <div class="Container Container--narrow">
+      <div class="VideoWrapper">
+        {% if section.settings.video_url.type == 'youtube' %}
+          <iframe class="Image--lazyLoad" data-src="//www.youtube.com/embed/{{ section.settings.video_url.id }}?autoplay=0&showinfo=0&controls=1&rel=0&modestbranding=1" frameborder="0" allowfullscreen></iframe>
+        {% elsif section.settings.video_url.type == 'vimeo' %}
+          <iframe class="Image--lazyLoad" data-src="//player.vimeo.com/video/{{ section.settings.video_url.id }}?autoplay=0&portrait=0&byline=0&color={{ settings.accent_color | remove_first: '#' }}" frameborder="0"></iframe>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <button class="Modal__Close Modal__Close--outside" data-animate-bottom data-action="close-modal">{% render 'icon' with 'close' %}</button>
+</div>
+
+<style>
+  @media only screen and (min-width: 968px){
+    #section-{{ section.id }},
+    #section-{{ section.id }} .Heading, .search-title{
+      color: {{ section.settings.desktop_text_color }};
+    }
+  }
+  @media only screen and (max-width: 967px){
+    #section-{{ section.id }},
+    #section-{{ section.id }} .Heading, .search-title{
+      color: {{ section.settings.mobile_text_color }};
+    }
+  }
+  #section-{{ section.id }} .ImageHero__Image{
+    transition: none !important;
+    opacity: 1!important;
+  }
+</style>
+
+{% if section.settings.bg_img != blank %}
+  {% assign image_url = section.settings.bg_img | img_url: '1920x1080' %}
+  {% style%}
+	@media only screen and (min-width: 968px){
+      #shopify-section-{{ section.id }}{
+        background-image: url({{ image_url }});
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+	}
+  {% endstyle %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Video with search",
+  "class": "index-video-with-search-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_img",
+      "label": "Background Image",
+      "info": "1920 x 1080px .jpg recommended."
+    },
+    {
+      "type": "select",
+      "id": "section_size",
+      "label": "Section size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "large"
+    },
+    {
+      "type": "header",
+      "content": "Search block"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_search",
+      "label": "Enable search",
+	  "default": true
+    },
+    {
+      "type": "color",
+      "id": "desktop_text_color",
+      "label": "Text(Desktop)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "mobile_text_color",
+      "label": "Text(Mobile)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Your video"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sub-heading"
+    },
+    {
+      "type": "text",
+      "id": "search_title",
+      "label": "Search Heading",
+      "default": "Search your products"
+    },
+    {
+      "type": "url",
+      "id": "btn_url_1",
+      "label": "Button URL1"
+    },
+    {
+      "type": "text",
+      "id": "btn_label_1",
+      "label": "Button label1"
+    },
+    {
+      "type": "url",
+      "id": "btn_url_2",
+      "label": "Button URL2"
+    },
+    {
+      "type": "text",
+      "id": "btn_label_2",
+      "label": "Button label2"
+    },
+    {
+      "type": "header",
+      "content": "Video block"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image(Desktop)",
+      "info": "1500 x 800px .jpg recommended."
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Image(mobile)",
+      "info": "600 x 600px .jpg recommended."
+    },
+    {
+      "type": "video_url",
+      "accept": ["vimeo", "youtube"],
+      "id": "video_url",
+      "label": "Video URL",
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Video",
+      "name": "Video with search",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

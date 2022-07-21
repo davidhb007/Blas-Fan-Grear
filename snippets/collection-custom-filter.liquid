@@ -1,0 +1,174 @@
+{% comment %}
+{% if collection.all_tags.size > 0 %}
+  <ul class="tag-filters">
+    {% for tag in collection.all_tags %}
+      {% if current_tags contains tag %}
+        <li class="tag-filters__item active">{{ tag | link_to_remove_tag: tag }}</li>
+      {% else %}
+        <li class="tag-filters__item">{{ tag | link_to_add_tag: tag }}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endif %}
+
+<div class="collection-sublinks-wrapper">
+  <div class="page-width">
+    <h2 class="section-heading h1"> 
+      {{ collection.heading | escape }}
+    </h2>
+    <div class="CNav">  
+      <div class="CNav-inner">
+        {%- assign customfilter_tags = "men, women, youth, tops, bottoms" | split: ", " -%}
+        {%- for tag in customfilter_tags -%}
+        <div class="CNav-name active" data-group="collection" data-handle="{{ link.url }}">
+          <a class="filter-link" data-url="#">{{ tag }}</a>
+        </div>
+        {%- endfor -%}
+      </div>
+    </div>          
+  </div>
+</div>
+
+<script>
+  $('.CNav-name').each(function(){
+    $(this).click(function(){
+	  $('.CNav-name').removeClass('active');
+      $(this).addClass('active');
+      var data_handle = $(this).attr('data-handle');
+      $.ajax({
+        type: 'GET',
+        url: data_handle,
+        dataType: 'html',
+        success: function(data){
+          var data_html = $(data).find('.ProductList').html();
+          console.log(data_html);
+          $('.ProductList').html(data_html).show();
+          $('.Grid__Cell').addClass('aos-init');
+          $('.Grid__Cell').addClass('aos-animate')
+        }
+      });
+    })
+  })
+</script>
+
+<style type="text/css">
+/*   img.grid-product__image {
+    opacity: 1 !important;
+} */
+  .collection-sublinks-wrapper{
+    padding: 60px 0;
+  }
+  .collection-sublinks-wrapper .page-width{
+    max-width: 1426px;
+  }
+  .collection-sublinks-wrapper .page-width:after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .section-heading{
+    font-family: Bebas Neue;
+    text-align: center;
+    font-size: 54px;
+  }
+  .breadcrumb__list{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: center;
+    padding-left: 0;
+  }
+  .breadcrumb__slash{
+    margin: 0 7px;
+    color: #0d1650;
+    display: inline-block;
+  }
+  .breadcrumb__link{
+    color: #0d1650;
+  }
+  .CNav-name{
+    border: 2px solid #FD6C01;
+    margin: 0 15px;
+    padding: 10px 15px 8px;
+    border-radius: 30px;    
+    background: #ffffff;
+    text-align: center;
+    cursor:pointer;
+  }
+  .CNav-name a{
+    font-size: 26px;
+    text-decoration: none;    
+    color: #FD6C01;
+    font-family: Bebas Neue;
+    letter-spacing: 2px;
+    line-height: 32px;
+  }
+  .CNav-name.active{
+    background: #FD6C01;
+  }
+  .CNav-name.active a{
+    color: #ffffff;
+  }
+  .CNav-name.active:before{
+    content: '';
+    display: none;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 6px;
+  }
+  .CNav .CNav-inner{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;      
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  @media only screen and (min-width: 1268px){
+    .CNav-name{
+      min-width: 190px;
+    }
+  }
+  @media only screen and (min-width: 481px){
+    .CNav{
+      margin-top: 30px;
+    }
+  }
+  @media only screen and (max-width: 767px){
+    .collection-sublinks-wrapper{
+      padding: 25px 0 15px;
+    }
+    .CNav{
+      margin-bottom: 0px;
+      margin-top: 5px;
+    }
+  }
+  @media only screen and (max-width: 480px){
+    .section-heading{
+      font-size: 28px;
+    }
+    .CNav .CNav-inner{
+      overflow: auto;
+      white-space: nowrap;
+    }
+    .CNav-name{
+      padding: 0px 12px;
+      margin: 0 5px 10px;
+      min-width: 90px;
+    }
+    .CNav-name a{
+      font-size: 14px;
+      letter-spacing: 1px;
+      line-height: 20px;
+    }
+  }
+</style>
+{% endcomment %}

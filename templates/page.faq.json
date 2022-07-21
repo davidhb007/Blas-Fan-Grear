@@ -1,0 +1,108 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-faq",
+      "blocks": {
+        "9a6d3a2f-d9c5-41eb-a968-e9deebffc309": {
+          "type": "separator",
+          "settings": {
+            "title": "Shipping"
+          }
+        },
+        "7291a922-f4c6-4b4b-84ee-ff326d5e1ac7": {
+          "type": "question",
+          "settings": {
+            "title": "What is Lorem Ipsum?",
+            "answer": "<p><strong>Lorem Ipsum<\/strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<\/p>"
+          }
+        },
+        "47391805-79da-4e33-8064-bc2e0d4fdf95": {
+          "type": "question",
+          "settings": {
+            "title": "What is Lorem Ipsum?",
+            "answer": "<p><strong>Lorem Ipsum<\/strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<\/p>"
+          }
+        },
+        "19379683-ece9-4f6a-8d81-7997b32f67e7": {
+          "type": "question",
+          "settings": {
+            "title": "What is Lorem Ipsum?",
+            "answer": "<p><strong>Lorem Ipsum<\/strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<\/p>"
+          }
+        },
+        "32bede4e-0735-4c48-a489-6e93174a6aa4": {
+          "type": "question",
+          "settings": {
+            "title": "What is Lorem Ipsum?",
+            "answer": "<p><strong>Lorem Ipsum<\/strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<\/p>"
+          }
+        },
+        "c3c4dda0-043d-428c-b81f-c1c466261031": {
+          "type": "separator",
+          "settings": {
+            "title": "Payment"
+          }
+        },
+        "04ab4fa4-7ba8-494c-a2b4-867318332f88": {
+          "type": "question",
+          "settings": {
+            "title": "What is Lorem Ipsum?",
+            "answer": "<p><strong>Lorem Ipsum<\/strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<\/p>"
+          }
+        },
+        "a473c9e8-8c2b-4e75-9024-b875f31c6964": {
+          "type": "question",
+          "settings": {
+            "title": "What is Lorem Ipsum?",
+            "answer": "<p><strong>Lorem Ipsum<\/strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<\/p>"
+          }
+        },
+        "097ff4c5-e574-48bf-8126-9f28d8bbed34": {
+          "type": "separator",
+          "settings": {
+            "title": "Products"
+          }
+        },
+        "0426713c-5091-4616-a6ca-764d6a21645d": {
+          "type": "question",
+          "settings": {
+            "title": "What is Lorem Ipsum?",
+            "answer": "<p><strong>Lorem Ipsum<\/strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<\/p>"
+          }
+        },
+        "65077fc0-cf68-4edf-8dd9-6a3ac862eb72": {
+          "type": "question",
+          "settings": {
+            "title": "What is Lorem Ipsum?",
+            "answer": "<p><strong>Lorem Ipsum<\/strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<\/p>"
+          }
+        },
+        "f0ec8ddf-4766-4e14-961d-afc6f2d4f362": {
+          "type": "question",
+          "settings": {
+            "title": "What is Lorem Ipsum?",
+            "answer": "<p><strong>Lorem Ipsum<\/strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "9a6d3a2f-d9c5-41eb-a968-e9deebffc309",
+        "7291a922-f4c6-4b4b-84ee-ff326d5e1ac7",
+        "47391805-79da-4e33-8064-bc2e0d4fdf95",
+        "19379683-ece9-4f6a-8d81-7997b32f67e7",
+        "32bede4e-0735-4c48-a489-6e93174a6aa4",
+        "c3c4dda0-043d-428c-b81f-c1c466261031",
+        "04ab4fa4-7ba8-494c-a2b4-867318332f88",
+        "a473c9e8-8c2b-4e75-9024-b875f31c6964",
+        "097ff4c5-e574-48bf-8126-9f28d8bbed34",
+        "0426713c-5091-4616-a6ca-764d6a21645d",
+        "65077fc0-cf68-4edf-8dd9-6a3ac862eb72",
+        "f0ec8ddf-4766-4e14-961d-afc6f2d4f362"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,128 @@
+<section id="section-{{ section.id }}" class="stores-list-section">
+  <div class="Container Container--narrow">
+    <div class="stores-list-container">
+      <div class="PageContent PageContent--narrow Rte">
+        <div class="TableWrapper"><table width="100%">
+          <tbody>
+            <tr>
+              <td><a href="/collections/caledonia-hs-fan-store"><span>Caledonia High School</span></a></td>
+              <td><a href="/collections/canyon-hs-fan-store">Canyon High School</a></td>
+            </tr>            
+            <tr>
+              <td><a href="/collections/capistrano-valley-hs-fan-store"><span>Capistrano Valley High School</span></a></td>
+              <td><a href="/collections/centennial-hs-fan-store"><span>Centennial High School</span></a></td>
+            </tr>
+            <tr>
+              <td><a href="/collections/cypress-bay-hs-fan-store">Cypress Bay High School</a></td>
+              <td><a href="/collections/eastside-tigers-fan-store"><span>Eastside Tigers</span></a></td>
+            </tr>
+            <tr>
+              <td><a href="/collections/eisenhower-hs-fan-store">Eisenhower High School</a></td>
+              <td><a href="/collections/el-modena-hs-fan-store"><span>El Modena High School</span></a></td>
+            </tr>
+            <tr>
+              <td><a href="/collections/fabens-store"><span>Fabens High School</span></a></td>
+              <td><a href="/collections/goddard-hs-fan-store">Goddard High School</a></td>
+            </tr>
+            <tr>
+              <td><a href="/collections/hope-international-university-fan-store"><span>Hope International University</span></a></td>
+              <td><a href="/collections/incarnate-word-hs-fan-store"><span>Incarnate Word High School</span></a></td>
+            </tr>
+            <tr>
+              <td><a href="/collections/jackson-hs-fan-store">Jackson High School</a></td>
+              <td><a href="/collections/jserra-high-school-fan-store">JSerra High School</a></td>
+            </tr>
+            <tr>
+              <td><a href="/collections/lutheran-hs-fan-store">Lutheran High School</a></td>
+              <td><a href="/collections/mission-viejo-hs-fan-store"><span>Mission Viejo High School</span></a></td>
+            </tr>
+            <tr>
+              <td><a href="/collections/niceville-hs-fan-store"><span>Niceville High School</span></a></td>
+              <td><a href="/collections/ogemaw-heights-hs-fan-store"><span>Ogemaw Heights High School</span></a></td>
+            </tr>
+            <tr>              
+              <td><a href="/collections/organ-mountain-hs-fan-store">Organ Mountain High School</a></td>
+              <td><a href="/collections/poway-hs-fan-store">Poway High School</a></td>
+            </tr>
+            <tr>
+              <td><a href="/collections/rochester-adams-fan-store">Rochester Adams High School</a></td>
+              <td><a href="/collections/rowland-store"><span>Rowland High School</span></a></td>
+            </tr>
+            <tr>
+              <td><a href="/collections/saginaw-valley-state-university-fan-store">Saginaw Valley State University</a></td>
+              <td><a href="/collections/sakonnet-schooners-fan-store">Sakonnet Schooners Pop Warner</a></td>
+            </tr>
+            <tr>
+              <td><a href="/collections/santa-ana-valley-hs-fan-store">Santa Ana Valley High School</a></td>
+              <td><a href="/collections/santa-fe-hs-fan-store">Santa Fe High School</a></td>
+            </tr>
+            <tr>
+              <td><a href="/collections/south-fort-myers-hs"><span>South Fort Myers High School</span></a></td>
+              <td><a href="/collections/tustin-hs-fan-store"><span>Tustin High School</span></a></td>
+            </tr>
+            <tr>
+              <td><a href="/collections/vanden-fan-store"><span>Vanden High School</span></a></td>
+              <td><a href="/collections/vista-pop-warner-fan-store">Vista Pop Warner</a></td>
+            </tr>
+            <tr>
+              <td><a href="/collections/westerville-south-hs-fan-store">Westerville High School</a></td>
+              <td><a href="/collections/woodcreek-hs-fan-store">Woodcreek High School</a></td>
+            </tr>
+          </tbody>
+          </table></div>
+      </div>     
+    </div>
+  </div>
+</section>
+
+<style>
+  .SectionHeader__Heading{
+    font-weight: 600;
+  }
+  .stores-list-section{
+    margin-bottom: 50px;
+  }
+  .stores-list-container{
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .stores-list-container td{
+    padding: 5px !important;    
+    margin-bottom: 0px !important;
+    border: none !important;
+  }
+  .stores-list-container td a{
+    text-decoration: none !important;
+    display: list-item;
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+  @media only screen and (max-width: 640px){
+    .PageContent{
+      max-width: 420px;
+    }
+    .stores-list-container td{
+      display:grid;
+      border: none !important;
+      text-align: center !important;
+      margin-left: 0px;
+      margin-bottom: 0px;      
+      padding-left: 20px !important;
+      text-align: left !important;
+    }    
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Page",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_large",
+      "label": "Large width",
+      "default": false
+    }
+  ]
+}
+{% endschema %}

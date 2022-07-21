@@ -1,0 +1,241 @@
+{
+  "sections": {
+    "16304345000d10bbae": {
+      "type": "index-video-with-search",
+      "settings": {
+        "bg_img": "shopify:\/\/shop_images\/hero.jpg",
+        "section_size": "large",
+        "enable_search": true,
+        "desktop_text_color": "#ffffff",
+        "mobile_text_color": "#000000",
+        "title": "Custom fan gear",
+        "subheading": "& team stores",
+        "search_title": "",
+        "btn_url_1": "shopify:\/\/collections\/custom-t-shirt",
+        "btn_label_1": "Design Gear",
+        "btn_url_2": "https:\/\/www.blastfangear.com\/pages\/create-a-store",
+        "btn_label_2": "Create a store",
+        "image": "shopify:\/\/shop_images\/video_bg.png",
+        "mobile_image": "shopify:\/\/shop_images\/video_bg_m.png",
+        "video_url": "https:\/\/youtu.be\/upE4FFH-25Y"
+      }
+    },
+    "163067831062b37bff": {
+      "type": "index-text-with-image",
+      "blocks": {
+        "1630678310ba834bab-0": {
+          "type": "content",
+          "settings": {
+            "text": "Pick a Product"
+          }
+        },
+        "1630678310ba834bab-1": {
+          "type": "content",
+          "settings": {
+            "text": "Upload Photos"
+          }
+        },
+        "1630678310ba834bab-2": {
+          "type": "content",
+          "settings": {
+            "text": "Customize Text & Color"
+          }
+        },
+        "48c9d56b-1060-47ba-bcfd-293579699949": {
+          "type": "content",
+          "settings": {
+            "text": "Shipped Direct"
+          }
+        }
+      },
+      "block_order": [
+        "1630678310ba834bab-0",
+        "1630678310ba834bab-1",
+        "1630678310ba834bab-2",
+        "48c9d56b-1060-47ba-bcfd-293579699949"
+      ],
+      "settings": {
+        "title": "How it works",
+        "text_bg_color": "#ffffff",
+        "btn_label": "",
+        "btn_link": "",
+        "image_title": "<p>Take a picture<br\/>Create custom fan gear!<\/p>",
+        "image": "shopify:\/\/shop_images\/image.png",
+        "image_desc": "<p>Upload photo and Blast will refine<br\/>and adjust the rest.<\/p>",
+        "image_position": "right",
+        "image_bg_color": "#e9e9e9"
+      }
+    },
+    "16310248190e6bd00d": {
+      "type": "index-image-with-search",
+      "settings": {
+        "title": "Find Your School, Team or Group",
+        "title_color": "#ffffff",
+        "bg_image": "shopify:\/\/shop_images\/hero.jpg",
+        "show_search": true,
+        "image_title": "<p>Can't find your program?<br\/>Use our store<\/p>",
+        "image": "shopify:\/\/shop_images\/Product_fee30700-8fe3-4c65-921e-57f5d119b6ff.png",
+        "bg_color": "#e9ecef",
+        "border_color": "#afafaf",
+        "btn_label": "Start customizing",
+        "btn_link": "shopify:\/\/collections\/custom-t-shirt",
+        "image_position": "left"
+      }
+    },
+    "1630680500009d628e": {
+      "type": "image-with-text-block",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/large_Juliana2.jpg",
+        "background": "#021b19",
+        "text_color": "#ffffff",
+        "block_size": "small",
+        "title": "Create a store",
+        "content": "<p>For your team, school or organization<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "show_parallax": true
+      }
+    },
+    "16306841220fde0cae": {
+      "type": "index-text-with-image",
+      "blocks": {
+        "16306841226483e9b3-0": {
+          "type": "content",
+          "settings": {
+            "text": "High Res Logos"
+          }
+        },
+        "16306841226483e9b3-1": {
+          "type": "content",
+          "settings": {
+            "text": "Color Codes"
+          }
+        },
+        "16306841226483e9b3-2": {
+          "type": "content",
+          "settings": {
+            "text": "Where to Pay You"
+          }
+        }
+      },
+      "block_order": [
+        "16306841226483e9b3-0",
+        "16306841226483e9b3-1",
+        "16306841226483e9b3-2"
+      ],
+      "settings": {
+        "title": "For your own store, just provide:",
+        "text_bg_color": "#efefef",
+        "btn_label": "Create store",
+        "btn_link": "shopify:\/\/pages\/create-a-store-2",
+        "image_title": "",
+        "image": "shopify:\/\/shop_images\/How-it-works.png",
+        "image_desc": "",
+        "image_position": "left",
+        "image_bg_color": "#ffffff"
+      }
+    },
+    "163068448507fa7d11": {
+      "type": "shop-now",
+      "blocks": {
+        "163068448572fdb235-0": {
+          "type": "quote",
+          "settings": {
+            "bg_color": "#e9e9e9",
+            "heading": "Highlights",
+            "heading_color": "#000000",
+            "content": "<p>* No Setup Costs<br\/>* No Inventory<br\/>* Make Money<br\/>* Delivered to Purchaser<br\/>* 2-3 Weeks Delivery<\/p>",
+            "txt_color": "#000000",
+            "btn_label": "",
+            "btn_url": "",
+            "btn_bg_color": "#000000",
+            "btn_label_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "163068448572fdb235-0"
+      ],
+      "settings": {
+        "title": "Shop now",
+        "collection": "fabens-store",
+        "grid_items_count": 6,
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false
+      }
+    },
+    "16306878950176e13f": {
+      "type": "collection-list",
+      "blocks": {
+        "163068789592eb032e-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "el-modena-hs-fan-store",
+            "image_alignment": "center center",
+            "content_position": "bottomCenter",
+            "subheading": "",
+            "title": "El Modena HS Fan Store",
+            "button_text": "View products",
+            "button_link": "shopify:\/\/collections\/el-modena-hs-fan-store",
+            "apply_overlay": true
+          }
+        },
+        "163068789592eb032e-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "fabens-store",
+            "image_alignment": "center center",
+            "content_position": "bottomCenter",
+            "subheading": "",
+            "title": "Fabens HS Fan Store",
+            "button_text": "View products",
+            "button_link": "shopify:\/\/collections\/fabens-store",
+            "apply_overlay": true
+          }
+        },
+        "163068789592eb032e-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "rowland-store",
+            "image_alignment": "center center",
+            "content_position": "bottomCenter",
+            "subheading": "",
+            "title": "Rowland HS Fan Store",
+            "button_text": "View products",
+            "button_link": "shopify:\/\/collections\/rowland-store",
+            "apply_overlay": true
+          }
+        }
+      },
+      "block_order": [
+        "163068789592eb032e-0",
+        "163068789592eb032e-1",
+        "163068789592eb032e-2"
+      ],
+      "settings": {
+        "title": "Featured stores",
+        "image_size": "small",
+        "add_spacing": true,
+        "expand_collection": false,
+        "stack_on_mobile": false,
+        "text_color": "#ffffff",
+        "button_color": "#363636"
+      }
+    },
+    "pagefly-home": {
+      "type": "pagefly-home",
+      "settings": {}
+    }
+  },
+  "order": [
+    "16304345000d10bbae",
+    "163067831062b37bff",
+    "16310248190e6bd00d",
+    "1630680500009d628e",
+    "16306841220fde0cae",
+    "163068448507fa7d11",
+    "16306878950176e13f",
+    "pagefly-home"
+  ]
+}

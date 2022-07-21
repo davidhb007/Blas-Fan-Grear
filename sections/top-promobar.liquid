@@ -1,0 +1,129 @@
+{%- if section.settings.enable_section == true -%}
+<div id="section-id-{{ section.id }}">
+  {%- unless section.settings.full_width -%}<div class="container">{%- endunless -%}
+  <div class="text-carousel">
+    {%- for block in section.blocks -%}
+      <div class="slide slide-{{ forloop.index }}" {{ block.shopify_attributes }}>
+        {%- if block.settings.title != blank -%}
+          <div class="heading" data-cc-animate data-cc-animate-delay="0.2s">
+            {%- if block.settings.title != blank -%}
+              <p class="text">{{ block.settings.title | escape }}</p>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+        {%- if block.settings.content != blank -%}
+          <div class="content" data-cc-animate data-cc-animate-delay="0.2s">
+            {%- if block.settings.content != blank -%}
+              {{ block.settings.content }}
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+        
+      </div>
+    {%- endfor -%}
+  </div>
+  {%- unless section.settings.full_width -%}</div>{%- endunless -%}
+</div>
+{%- endif -%}
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.text-carousel').slick({
+      infinite: !0,
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      arrows: !1,
+      dots: !1,
+      autoplay: !0,
+      autoplaySpeed: 0,
+      speed: 4e3,
+      cssEase: "linear",
+      draggable: !1,
+      pauseOnHover: !1,
+      pauseOnFocus: !1,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: !0,
+            variableWidth: !0
+          }
+        },
+        {
+          breakpoint: 568,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: !0,
+            variableWidth: !0
+          }
+        }          
+      ]
+    });
+  });
+</script>
+
+{% style%}
+	.top-promobar-section{
+		background-color: {{ section.settings.bg_color }};
+	}
+	.top-promobar-section p{
+		color: {{ section.settings.text_color }};
+	}
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "Top promobar",
+    "class": "top-promobar-section",
+    "max_blocks": 8,
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_section",
+        "label": "Enable section",
+        "default": false
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#ffffff"
+      },
+      {
+        "id": "full_width",
+        "type": "checkbox",
+        "label": "Full page width",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Slide",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Heading"
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+			"default": "<p>Tell your story</p>"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

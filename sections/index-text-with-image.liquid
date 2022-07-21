@@ -1,0 +1,189 @@
+<section class="Section {% unless section.settings.image %}Section--spacingNormal{% endunless %}">
+  {%- capture section_content -%}
+    <div class="FeatureText__ContentWrapper">
+      {%- if section.blocks.size > 0 -%}
+        <div class="FeatureText__Content">
+          {%- if section.settings.subheading != blank or section.settings.title != blank or section.settings.content != blank -%}
+            <header class="SectionHeader">
+              {%- if section.settings.title != blank -%}
+                <h2 class="SectionHeader__Heading Heading u-h2">{{ section.settings.title | escape }}</h2>
+              {%- endif -%}
+            </header>
+          {%- endif -%}
+
+          {%- assign i = 1 -%}
+          {%- for block in section.blocks -%}
+            <div class="Rte">
+              <div class="Order"><span class="Number">{{ i }}</span><p class="Content">{{ block.settings.text | escape }}</p></div>
+            </div>
+          {%- assign i = i | plus: 1 -%}
+          {%- endfor -%}  
+          {%- if section.settings.btn_label != blank and section.settings.btn_link != blank -%}
+            <div class="Btn_Wrapper mt-20"><a href="{{ section.settings.btn_link | escape }}" class="Button Button--primary">{{ section.settings.btn_label }}</a></div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  {%- endcapture -%}
+
+  {%- capture section_image -%}
+    {%- if section.settings.image != blank -%}
+      <div class="FeatureText__ImageWrapper">
+  	  {%- if section.settings.image_title != blank -%}
+        <div class="SectionHeader">
+          <h2 class="SectionHeader__Heading Heading u-h2">{{ section.settings.image_title }}</h2>
+        </div>
+  	  {%- endif -%}        
+        {%- capture supported_sizes -%}{%- render 'image-size', sizes: '400,600,700,800,900,1000,1200', image: section.settings.image -%}{%- endcapture -%}
+ 
+        <div class="AspectRatio" style="max-width: {{ section.settings.image.width }}px; --aspect-ratio: {{ section.settings.image.aspect_ratio }}">
+          {%- assign image_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="Image--lazyLoad Image--slide{{ section.settings.image_position | capitalize }}" data-src="{{ image_url }}" data-expand="-200" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ section.settings.image.alt | escape }}">
+
+          <noscript>
+            <img src="{{ section.settings.image | img_url: '800x' }}" alt="{{ section.settings.image.alt | escape }}">
+          </noscript>
+        </div>
+
+        {%- if section.settings.image_desc != blank -%}
+          <div class="FeatureText__ImageDesc mt-30 Text--alignCenter">{{ section.settings.image_desc }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  {%- endcapture -%}
+
+  <div class="FeatureText {% if section.settings.image != blank %}FeatureText--withImage FeatureText--image{{ section.settings.image_position | capitalize }}{% endif %}">
+    {%- if section.settings.image_position == 'left' -%}
+      {{- section_image -}}
+      {{- section_content -}}
+    {%- else -%}
+      {{- section_content -}}
+      {{- section_image -}}
+    {%- endif -%}
+  </div>
+</section>
+ 
+{%- style -%}
+  #shopify-section-{{ section.id }} .FeatureText__ContentWrapper{
+    background-color: {{ section.settings.text_bg_color }};
+  }
+  #shopify-section-{{ section.id }} .FeatureText__ImageWrapper{
+    background-color: {{ section.settings.image_bg_color }};
+  }A
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "Index text with image",
+  "class": "shopify-section--bordered index-text-with-image-section",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Text block settings"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Title"
+    },
+    {
+      "type": "color",
+      "id": "text_bg_color",
+      "label": "Text BG color",
+      "default": "#efefef"
+    },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "Button Label",
+      "default": "Button"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "header",
+      "content": "Image block settings"
+    },
+    {
+      "type": "richtext",
+      "id": "image_title",
+      "label": "Heading",
+	  "default": "<p>Title</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "1200 x 1200px .png recommended"
+    },
+    {
+      "type": "richtext",
+      "id": "image_desc",
+      "label": "Description",
+	  "default": "<p>Add descriptions here</p>"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "color",
+      "id": "image_bg_color",
+      "label": "Image BG color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "content",
+      "name": "Content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Text",
+      "name": "Index text with image",
+      "settings": {},
+      "blocks": [
+        {
+          "type": "content",
+          "settings": {}
+        },
+        {
+          "type": "content",
+          "settings": {}
+        },
+        {
+          "type": "content",
+          "settings": {}
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

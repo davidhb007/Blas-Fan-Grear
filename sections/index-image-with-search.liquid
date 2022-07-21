@@ -1,0 +1,212 @@
+<section class="Section">
+  {%- capture section_content -%}
+    <div class="FeatureText__ContentWrapper">
+
+        <div class="FeatureText__Content Searchblock_Wrapper">
+          {%- if section.settings.subheading != blank or section.settings.title != blank or section.settings.content != blank -%}
+            <header class="SectionHeader">
+              {%- if section.settings.title != blank -%}
+                <h3 class="SectionHeader__Heading Heading u-h3">{{ section.settings.title | escape }}</h3>
+              {%- endif -%}
+            </header>
+          {%- endif -%}
+     
+          {%- if section.settings. show_search == true -%}
+            <div id="Search" class="Search index" aria-hidden="true">
+              {%- if section.settings.search_title != blank -%}
+              <p class="search-title">{{ section.settings.search_title | escape }}</p>
+              {%- endif -%}            
+              <div class="Search__Inner">
+                <div class="Search__SearchBar">
+                  <form action="{{ routes.search_url }}" name="GET" role="search" class="Search__Form">
+                    <div class="Search__InputIconWrapper">
+                      <span class="hidden-tablet-and-up">{%- render 'icon' with 'search' -%}</span>
+                      <span class="hidden-phone">{%- render 'icon' with 'search-desktop' -%}</span>
+                    </div>
+
+                    <input type="search" class="Search__Input Heading" name="q" autocomplete="off" autocorrect="off" autocapitalize="off" aria-label="{{ 'search.general.input_placeholder' | t }}" placeholder="{{ 'search.general.input_placeholder' | t }}" autofocus>
+                    <input type="hidden" name="type" value="product">
+                  </form>
+
+                  <button class="Search__Close Link Link--primary" data-action="close-search" aria-label="{{ 'header.navigation.close_search' | t }}">{% render 'icon' with 'close' %}</button>
+                </div>
+
+                <div class="Search__Results" aria-hidden="true">
+                  {%- if settings.search_mode != 'product' -%}
+                    <div class="PageLayout PageLayout--breakLap">
+                      <div class="PageLayout__Section"></div>
+                      <div class="PageLayout__Section PageLayout__Section--secondary"></div>
+                    </div>
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>          
+          {%- endif -%}
+        </div>
+    </div>
+  {%- endcapture -%}
+
+  {%- capture section_image -%}
+    {%- if section.settings.image != blank -%}
+      <div class="FeatureText__ImageWrapper">
+        {%- if section.settings.image_title != blank -%}
+        <div class="SectionHeader">
+          <h2 class="SectionHeader__Heading Heading u-h2">{{ section.settings.image_title }}</h2>
+        </div>  		
+        {%- endif -%}  
+        
+        <div class="p-relative ImageWrapper">
+          {%- capture supported_sizes -%}{%- render 'image-size', sizes: '400,600,700,800,900,1000,1200', image: section.settings.image -%}{%- endcapture -%}
+
+          <div class="AspectRatio" style="max-width: {{ section.settings.image.width }}px;">
+            {%- assign image_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            <img class="Image--lazyLoad Image--slide{{ section.settings.image_position | capitalize }}" data-src="{{ image_url }}" data-expand="-200" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ section.settings.image.alt | escape }}" width="{{ section.settings.image.width }}" height="{{ section.settings.image.height }}">
+
+            <noscript>
+              <img src="{{ section.settings.image | img_url: '800x' }}" alt="{{ section.settings.image.alt | escape }}">
+            </noscript>
+          </div>
+        </div>
+
+        {%- if section.settings.btn_label != blank and section.settings.btn_link != blank -%}
+        <div class="Btn_Wrapper">
+          <a class="Button Button--primary" href="{{ section.settings.btn_link | escape }}">{{ section.settings.btn_label | escape }}</a>
+        </div>        
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  {%- endcapture -%}
+
+  <div class="FeatureText {% if section.settings.image != blank %}FeatureText--withImage FeatureText--image{{ section.settings.image_position | capitalize }}{% endif %}">
+    {%- if section.settings.image_position == 'left' -%}
+      {{- section_image -}}
+      {{- section_content -}}
+    {%- else -%}
+      {{- section_content -}}
+      {{- section_image -}}
+    {%- endif -%}
+  </div>
+</section>
+
+{% if section.settings.bg_image != blank %}
+  {% assign image_url = section.settings.bg_image | img_url: '1080x1080' %}
+  {% style%}
+    #shopify-section-{{ section.id }} .FeatureText__ContentWrapper{
+      background-image: url({{ image_url }});
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+	}
+  {% endstyle %}
+{% endif %}
+
+<style>
+  #shopify-section-{{ section.id }} .Searchblock_Wrapper .SectionHeader__Heading{
+    color: {{ section.settings. title_color }};
+  }
+  #shopify-section-{{ section.id }} .FeatureText__ImageWrapper img{
+    border: 2px solid {{ section.settings.border_color }};
+  }
+  #shopify-section-{{ section.id }} .FeatureText__ImageWrapper{
+    background: {{ section.settings.bg_color }};
+  }  
+</style>
+
+{% schema %}
+{
+  "name": "Image with search",
+  "class": "index-image-with-search-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Search block settings"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Title"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+	  "default": "#000000"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image",
+      "info": "1080x1080 .png recommended"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_search",
+      "label": "Enable Search",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Image block settings"
+    },
+    {
+      "type": "richtext",
+      "id": "image_title",
+      "label": "Heading",
+	  "default": "<p>Title</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "1200 x 1200px .png recommended"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+	  "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+	  "default": "#efefef"
+    },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "Button label",
+      "default": "Button"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Image",
+      "name": "Image with search",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}
