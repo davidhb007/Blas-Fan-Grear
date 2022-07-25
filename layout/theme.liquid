@@ -20,6 +20,7 @@
     <link rel="preload" href="https://fonts.shopifycdn.com/open_sans/opensans_n4.5460e0463a398b1075386f51084d8aa756bafb17.woff2?h1=Ymxhc3RhcHBhcmVsLmNvbQ&h2=Ymxhc3RmYW5nZWFyLmNvbQ&hmac=b14d441179b5da58a1f121d0cdbb503850719b97b3beee31db394d7e97d719c1" as="font" type="font/woff2" crossorigin>
 
     <link rel="preload" href="{{ 'pagefly-main.css' | asset_url }}" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="{{ 'relydev.css' | asset_url }}" as="style" onload="this.rel='stylesheet'">
 
     {% if template contains 'product' %}<link rel="preload" as="image" href="https:{{ product.images[0] | img_url: '600x' }}">{% endif %}
 

@@ -1,104 +1,100 @@
 {
-  "sections": {
-    "16585021890c13097d": {
-      "type": "text-with-image",
-      "settings": {
-        "subheading": "",
-        "title": "{{ collection.title }}",
-        "image": "{{ collection.image }}",
-        "image_position": "right",
-        "content": "",
-        "link_text": "Shop By Teams",
-        "link_url": ""
-      }
-    },
-    "1658373848ae06fa03": {
-      "type": "collection-list",
-      "blocks": {
-        "1658373848d26e8176-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "delta-charter-hs-football",
-            "image": "{{ block.settings.collection.image }}",
-            "image_alignment": "center center",
-            "content_position": "bottomLeft",
-            "subheading": "",
-            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
-            "button_text": "View products",
-            "button_link": "shopify:\/\/collections\/delta-charter-hs-football",
-            "apply_overlay": true
-          }
+    "sections": {
+        "16585021890c13097d": {
+            "type": "text-with-image",
+            "settings": {
+                "subheading": "",
+                "title": "{{ collection.title }}",
+                "image": "{{ collection.image }}",
+                "image_position": "left",
+                "content": "",
+                "link_text": "Shop By Teams",
+                "link_url": ""
+            }
         },
-        "1658373848d26e8176-1": {
-          "type": "collection",
-          "settings": {
-            "collection": "delta-charter-hs-boys-volleyball",
-            "image": "shopify:\/\/shop_images\/volleyball-close-up.jpg",
-            "image_alignment": "center center",
-            "content_position": "bottomLeft",
-            "subheading": "",
-            "title": "{{ block.settings.collection.title }}",
-            "button_text": "View products",
-            "button_link": "shopify:\/\/collections\/delta-charter-hs-boys-volleyball",
-            "apply_overlay": true
-          }
+        "1658373848ae06fa03": {
+            "type": "collection-list",
+            "blocks": {
+                "1658373848d26e8176-0": {
+                    "type": "collection",
+                    "settings": {
+                        "collection": "delta-charter-hs-football",
+                        "image": "{{ block.settings.collection.image }}",
+                        "image_alignment": "center center",
+                        "content_position": "bottomLeft",
+                        "subheading": "",
+                        "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+                        "button_text": "View products",
+                        "button_link": "shopify://collections/delta-charter-hs-football",
+                        "apply_overlay": true
+                    }
+                },
+                "1658373848d26e8176-1": {
+                    "type": "collection",
+                    "settings": {
+                        "collection": "delta-charter-hs-boys-volleyball",
+                        "image": "shopify://shop_images/volleyball-close-up.jpg",
+                        "image_alignment": "center center",
+                        "content_position": "bottomLeft",
+                        "subheading": "",
+                        "title": "{{ block.settings.collection.title }}",
+                        "button_text": "View products",
+                        "button_link": "shopify://collections/delta-charter-hs-boys-volleyball",
+                        "apply_overlay": true
+                    }
+                },
+                "1658373848d26e8176-2": {
+                    "type": "collection",
+                    "settings": {
+                        "collection": "",
+                        "image_alignment": "center center",
+                        "content_position": "bottomLeft",
+                        "subheading": "Sub-heading",
+                        "title": "Collection name",
+                        "button_text": "View products",
+                        "button_link": "",
+                        "apply_overlay": true
+                    }
+                }
+            },
+            "block_order": [
+                "1658373848d26e8176-0",
+                "1658373848d26e8176-1",
+                "1658373848d26e8176-2"
+            ],
+            "settings": {
+                "title": "",
+                "image_size": "small",
+                "add_spacing": true,
+                "expand_collection": false,
+                "stack_on_mobile": true,
+                "text_color": "#ffffff",
+                "button_color": "#363636"
+            }
         },
-        "1658373848d26e8176-2": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image_alignment": "center center",
-            "content_position": "bottomLeft",
-            "subheading": "Sub-heading",
-            "title": "Collection name",
-            "button_text": "View products",
-            "button_link": "",
-            "apply_overlay": true
-          }
+        "main": {
+            "type": "main-collection",
+            "disabled": true,
+            "settings": {
+                "show_collection_info": true,
+                "show_collection_image": false,
+                "apply_overlay": true,
+                "show_color_swatch": false,
+                "show_vendor": false,
+                "collection_image_size": "normal",
+                "show_sort_by": true,
+                "show_layout_switch": false,
+                "toolbar_position": "top",
+                "show_filters": true,
+                "show_filter_color_swatch": true,
+                "expand_filters": true,
+                "filter_position": "sidebar",
+                "filter_menu": "",
+                "grid_items_per_page": 16,
+                "grid_mobile_items_per_row": "2",
+                "grid_desktop_items_per_row": 4
+            }
         }
-      },
-      "block_order": [
-        "1658373848d26e8176-0",
-        "1658373848d26e8176-1",
-        "1658373848d26e8176-2"
-      ],
-      "settings": {
-        "title": "",
-        "image_size": "small",
-        "add_spacing": true,
-        "expand_collection": false,
-        "stack_on_mobile": true,
-        "text_color": "#ffffff",
-        "button_color": "#363636"
-      }
     },
-    "main": {
-      "type": "main-collection",
-      "disabled": true,
-      "settings": {
-        "show_collection_info": true,
-        "show_collection_image": false,
-        "apply_overlay": true,
-        "show_color_swatch": false,
-        "show_vendor": false,
-        "collection_image_size": "normal",
-        "show_sort_by": true,
-        "show_layout_switch": false,
-        "toolbar_position": "top",
-        "show_filters": true,
-        "show_filter_color_swatch": true,
-        "expand_filters": true,
-        "filter_position": "sidebar",
-        "filter_menu": "",
-        "grid_items_per_page": 16,
-        "grid_mobile_items_per_row": "2",
-        "grid_desktop_items_per_row": 4
-      }
-    }
-  },
-  "order": [
-    "16585021890c13097d",
-    "1658373848ae06fa03",
-    "main"
-  ]
+    "order": ["16585021890c13097d", "1658373848ae06fa03", "main"]
 }
