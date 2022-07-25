@@ -12,58 +12,53 @@
         "link_url": ""
       }
     },
-    "1658373848ae06fa03": {
-      "type": "collection-list",
+    "1658765692d9be7e38": {
+      "type": "relydev-school-teams-collection-list",
       "blocks": {
-        "1658373848d26e8176-0": {
+        "16587656926f3ad811-0": {
           "type": "collection",
           "settings": {
             "collection": "delta-charter-hs-football",
-            "image": "{{ block.settings.collection.image }}",
             "image_alignment": "center center",
             "content_position": "bottomLeft",
-            "subheading": "",
             "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
-            "button_text": "View products",
-            "button_link": "shopify:\/\/collections\/delta-charter-hs-football",
+            "button_text": "Shop Team",
+            "button_link": "",
             "apply_overlay": true
           }
         },
-        "1658373848d26e8176-1": {
+        "16587656926f3ad811-1": {
           "type": "collection",
           "settings": {
-            "collection": "delta-charter-hs-boys-volleyball",
-            "image": "shopify:\/\/shop_images\/volleyball-close-up.jpg",
+            "collection": "delta-charter-hs-boys-volleyball-1",
             "image_alignment": "center center",
             "content_position": "bottomLeft",
-            "subheading": "",
-            "title": "{{ block.settings.collection.title }}",
-            "button_text": "View products",
-            "button_link": "shopify:\/\/collections\/delta-charter-hs-boys-volleyball",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
             "apply_overlay": true
           }
         },
-        "1658373848d26e8176-2": {
+        "6cef8d22-ad37-4c82-ae52-c321fb943b5f": {
           "type": "collection",
           "settings": {
             "collection": "",
             "image_alignment": "center center",
             "content_position": "bottomLeft",
-            "subheading": "Sub-heading",
-            "title": "Collection name",
-            "button_text": "View products",
+            "title": "Team Sport",
+            "button_text": "Shop Team",
             "button_link": "",
             "apply_overlay": true
           }
         }
       },
       "block_order": [
-        "1658373848d26e8176-0",
-        "1658373848d26e8176-1",
-        "1658373848d26e8176-2"
+        "16587656926f3ad811-0",
+        "16587656926f3ad811-1",
+        "6cef8d22-ad37-4c82-ae52-c321fb943b5f"
       ],
       "settings": {
-        "title": "",
+        "title": "School Teams",
         "image_size": "small",
         "add_spacing": true,
         "expand_collection": false,
@@ -98,7 +93,7 @@
   },
   "order": [
     "16587631541516063d",
-    "1658373848ae06fa03",
+    "1658765692d9be7e38",
     "main"
   ]
 }

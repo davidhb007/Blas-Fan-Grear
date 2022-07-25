@@ -108,3 +108,13 @@
         padding-right: 50px;
     }
 }
+/* RelyDev School Page Hero Custom Section End */
+
+/* RelyDev School Page Teams Collection List Custom Section */
+#relydev-school-page-team-collection-heading {
+    margin: 60px auto 40px;
+}
+
+#relydev-school-page-team-collection-heading > .SectionHeader__Heading {
+    font-size: 2rem !important;
+}
