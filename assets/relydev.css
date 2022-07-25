@@ -38,13 +38,21 @@
 }
 
 @media screen and (min-width: 641px) {
+    #RelyDev-School-Page-Hero {
+        padding: 0 50px;
+    }
+
     .FeatureText__Content {
-        max-width: 430px;
+        max-width: none !important;
         margin: 0 auto;
     }
 
+    .FeatureText__Content .SectionHeader__Heading {
+        font-size: 2.5rem !important;
+    }
+
     .FeatureText--withImage {
-        display: table;
+        display: block !important;
         width: 100%;
         text-align: left;
         table-layout: fixed;
@@ -53,12 +61,11 @@
     .FeatureText--withImage .RelyDev-FeatureText__ContentWrapper,
     .FeatureText--withImage .FeatureText__ImageWrapper {
         display: table-cell;
-        width: 50%;
         vertical-align: middle;
     }
 
     .FeatureText--withImage .RelyDev-FeatureText__ContentWrapper {
-        padding: 50px;
+        padding: 50px 0;
     }
 
     .RelyDev-FeatureText--imageRight .RelyDev-FeatureText__ContentWrapper {
@@ -66,46 +73,48 @@
         text-align: right;
     }
 
-    .RelyDev-FeatureText--imageRight .FeatureText__Content,
-    .RelyDev-FeatureText--imageRight .RelyDev-School-Logo-Container {
-        margin-right: 0;
-    }
-
-    .RelyDev-FeatureText--imageRight .RelyDev-School-Logo-Container {
-        text-align: left;
-        margin: auto 0 auto 0;
-        padding-left: 30px;
+    .relydev-logo-wrapper {
+        width: 30% !important;
     }
 
     .RelyDev-FeatureText--imageLeft .RelyDev-FeatureText__ContentWrapper {
         padding-left: 30px;
     }
+}
 
-    .RelyDev-FeatureText--imageLeft .FeatureText__Content,
-    .RelyDev-FeatureText--imageLeft .RelyDev-School-Logo-Container {
-        margin-left: 0;
+@media screen and (min-width: 843px) {
+    .FeatureText__Content .SectionHeader__Heading {
+        font-size: 3rem !important;
     }
 
-    .RelyDev-FeatureText--imageLeft .RelyDev-School-Logo-Container {
-        text-align: right;
-        margin: auto 0 0 auto;
-        padding-right: 30px;
+    .relydev-logo-wrapper .AspectRatio {
+        max-width: 300px !important;
     }
 }
 
 @media screen and (min-width: 1140px) {
     .RelyDev-FeatureText--imageRight .RelyDev-FeatureText__ContentWrapper {
-        padding-right: 50px;
+        padding-right: 0;
     }
     .RelyDev-FeatureText--imageRight .RelyDev-School-Logo-Container {
         padding-left: 50px;
     }
 
     .RelyDev-FeatureText--imageLeft .RelyDev-FeatureText__ContentWrapper {
-        padding-left: 50px;
+        padding-left: 0;
     }
+
     .RelyDev-FeatureText--imageLeft .RelyDev-School-Logo-Container {
         padding-right: 50px;
+    }
+
+    .FeatureText__Content .SectionHeader__Heading {
+        font-size: 3.5rem !important;
+    }
+}
+@media screen and (min-width: 1300px) {
+    .FeatureText__Content .SectionHeader__Heading {
+        font-size: 4rem !important;
     }
 }
 /* RelyDev School Page Hero Custom Section End */
