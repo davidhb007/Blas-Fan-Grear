@@ -19,7 +19,7 @@
           "type": "collection",
           "settings": {
             "collection": "delta-charter-hs-football",
-            "image_alignment": "center center",
+            "image_alignment": "center right",
             "content_position": "bottomLeft",
             "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
             "button_text": "Shop Team",
@@ -31,7 +31,7 @@
           "type": "collection",
           "settings": {
             "collection": "delta-charter-hs-boys-volleyball-1",
-            "image_alignment": "center center",
+            "image_alignment": "center right",
             "content_position": "bottomLeft",
             "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
             "button_text": "Shop Team",
@@ -42,10 +42,203 @@
         "6cef8d22-ad37-4c82-ae52-c321fb943b5f": {
           "type": "collection",
           "settings": {
-            "collection": "",
-            "image_alignment": "center center",
+            "collection": "delta-charter-boys-basketball",
+            "image_alignment": "center right",
             "content_position": "bottomLeft",
-            "title": "Team Sport",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "c899f53d-68fe-4973-85b0-4e0b5cdaa86a": {
+          "type": "collection",
+          "settings": {
+            "collection": "delta-charter-boys-soccer",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "5a75b4c2-3158-4baa-8c3b-d33272a2740f": {
+          "type": "collection",
+          "settings": {
+            "collection": "delta-charter-girls-soccer",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "0eff4155-cb78-474c-b3b7-d48784adc0cb": {
+          "type": "collection",
+          "settings": {
+            "collection": "delta-charter-hs-boys-volleyball",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "ef06dfb6-c772-4bd3-8c75-b53000893512": {
+          "type": "collection",
+          "settings": {
+            "collection": "delta-charter-boys-cross-country",
+            "image": "{{ block.settings.collection.image }}",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "e17d0589-39d2-41ae-a096-439e250a2700": {
+          "type": "collection",
+          "settings": {
+            "collection": "delta-charter-boys-lacrosse",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "d7d297cb-51f7-4ff5-89fa-a7fd64232dd3": {
+          "type": "collection",
+          "settings": {
+            "collection": "delta-charter-boys-water-polo",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "fdbbc7e1-5b55-45f9-9a08-677930e436ad": {
+          "type": "collection",
+          "settings": {
+            "collection": "delta-charter-girls-lacrosse",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "df7f8794-4ba5-49c4-9cc5-095af25e1edb": {
+          "type": "collection",
+          "settings": {
+            "collection": "delta-charter-boys-tennis",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "ace4faa7-3155-4071-a424-6013b5c075ef": {
+          "type": "collection",
+          "settings": {
+            "collection": "delta-charter-cheer",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "4840b376-c267-4451-9429-ff6d82561246": {
+          "type": "collection",
+          "settings": {
+            "collection": "delta-charter-girls-basketball",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "be3f8290-3286-4559-b4cf-8484fa4ee7c3": {
+          "type": "collection",
+          "settings": {
+            "collection": "delta-charter-girls-cross-country",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "a24206b5-c8d3-4622-a8e7-5c05e5f285a4": {
+          "type": "collection",
+          "settings": {
+            "collection": "delta-charter-girls-golf",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "7034a9af-b785-498f-8fae-84bb86411a6e": {
+          "type": "collection",
+          "settings": {
+            "collection": "delta-charter-girls-tennis",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "d01c68d8-e132-47bf-abd6-9e98b2ff711c": {
+          "type": "collection",
+          "settings": {
+            "collection": "delta-charter-girls-water-polo",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "97927dc7-3f53-417e-959c-303a342ed836": {
+          "type": "collection",
+          "settings": {
+            "collection": "delta-charter-hs-boys-baseball",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "c7c7f3df-9a6a-4816-9649-a5a39dff8c9f": {
+          "type": "collection",
+          "settings": {
+            "collection": "delta-charter-hs-boys-golf",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
             "button_text": "Shop Team",
             "button_link": "",
             "apply_overlay": true
@@ -55,7 +248,23 @@
       "block_order": [
         "16587656926f3ad811-0",
         "16587656926f3ad811-1",
-        "6cef8d22-ad37-4c82-ae52-c321fb943b5f"
+        "6cef8d22-ad37-4c82-ae52-c321fb943b5f",
+        "c899f53d-68fe-4973-85b0-4e0b5cdaa86a",
+        "5a75b4c2-3158-4baa-8c3b-d33272a2740f",
+        "0eff4155-cb78-474c-b3b7-d48784adc0cb",
+        "ef06dfb6-c772-4bd3-8c75-b53000893512",
+        "e17d0589-39d2-41ae-a096-439e250a2700",
+        "d7d297cb-51f7-4ff5-89fa-a7fd64232dd3",
+        "fdbbc7e1-5b55-45f9-9a08-677930e436ad",
+        "df7f8794-4ba5-49c4-9cc5-095af25e1edb",
+        "ace4faa7-3155-4071-a424-6013b5c075ef",
+        "4840b376-c267-4451-9429-ff6d82561246",
+        "be3f8290-3286-4559-b4cf-8484fa4ee7c3",
+        "a24206b5-c8d3-4622-a8e7-5c05e5f285a4",
+        "7034a9af-b785-498f-8fae-84bb86411a6e",
+        "d01c68d8-e132-47bf-abd6-9e98b2ff711c",
+        "97927dc7-3f53-417e-959c-303a342ed836",
+        "c7c7f3df-9a6a-4816-9649-a5a39dff8c9f"
       ],
       "settings": {
         "title": "School Teams",

@@ -127,3 +127,12 @@
 #relydev-school-page-team-collection-heading > .SectionHeader__Heading {
     font-size: 2rem !important;
 }
+
+#relydev-school-sport-collection-item {
+    height: 200px;
+}
+
+#relydev-school-sport-collection-item .CollectionItem__Image {
+    background-size: contain;
+    background-repeat: no-repeat;
+}
