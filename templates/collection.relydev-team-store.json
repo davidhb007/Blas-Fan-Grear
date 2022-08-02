@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "main-team-store-collection",
+      "type": "main-relydev-team-store-collection",
       "settings": {
         "show_collection_info": false,
         "show_collection_image": false,

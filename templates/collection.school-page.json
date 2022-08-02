@@ -78,7 +78,7 @@
         "0eff4155-cb78-474c-b3b7-d48784adc0cb": {
           "type": "collection",
           "settings": {
-            "collection": "delta-charter-hs-boys-volleyball",
+            "collection": "delta-charter-hs-girls-volleyball",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
             "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
@@ -90,7 +90,7 @@
         "ef06dfb6-c772-4bd3-8c75-b53000893512": {
           "type": "collection",
           "settings": {
-            "collection": "delta-charter-boys-cross-country",
+            "collection": "delta-charter-cross-country",
             "image": "{{ block.settings.collection.image }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -187,7 +187,7 @@
         "a24206b5-c8d3-4622-a8e7-5c05e5f285a4": {
           "type": "collection",
           "settings": {
-            "collection": "delta-charter-girls-golf",
+            "collection": "delta-charter-golf",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
             "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
@@ -232,7 +232,7 @@
             "apply_overlay": true
           }
         },
-        "c7c7f3df-9a6a-4816-9649-a5a39dff8c9f": {
+        "ef237606-8ccc-4c6b-a4b5-19f5e21842ef": {
           "type": "collection",
           "settings": {
             "collection": "delta-charter-hs-boys-golf",
@@ -264,7 +264,7 @@
         "7034a9af-b785-498f-8fae-84bb86411a6e",
         "d01c68d8-e132-47bf-abd6-9e98b2ff711c",
         "97927dc7-3f53-417e-959c-303a342ed836",
-        "c7c7f3df-9a6a-4816-9649-a5a39dff8c9f"
+        "ef237606-8ccc-4c6b-a4b5-19f5e21842ef"
       ],
       "settings": {
         "title": "School Teams",
