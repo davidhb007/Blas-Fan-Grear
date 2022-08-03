@@ -136,3 +136,86 @@
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+/* 
+    RelyDev School Store Page Custom CSS
+    This takes care for the tab design 
+    for the different Product Types
+ */
+
+@media only screen and (max-width: 1007px) {
+    .collection-custom-fields .img_wrapper img {
+        max-width: 50% !important;
+    }
+}
+
+.relydev-team-products-container > .tab-selector {
+    display: flex;
+    justify-content: center;
+    padding: 0 50px;
+    margin-bottom: 40px;
+}
+
+.relydev-team-products-container > .tab-selector :first-child {
+    border-left: 1px solid #a1a1a1;
+}
+
+.relydev-team-products-container > .tab-selector :last-child {
+    border-right: 1px solid #a1a1a1;
+}
+
+.relydev-team-products-container .tab {
+    flex-grow: 1;
+    padding: 13px 0;
+    font-size: 1.2rem;
+    text-align: center;
+    border-top: 1px solid #a1a1a1;
+    border-bottom: 1px solid #a1a1a1;
+    box-sizing: border-box !important;
+    transition: background-color 0.4s ease-in;
+}
+
+.relydev-team-products-container .tab:hover:not(.tab-active) {
+    background-color: #adadad;
+    cursor: pointer;
+}
+
+.relydev-team-products-container .tab-active {
+    background-color: #1d1d1d;
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .relydev-team-products-container > .tab-selector {
+        padding: 0;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .relydev-team-products-container > .tab-selector :last-child {
+        border-bottom: 1px solid #1d1d1d;
+    }
+    .relydev-team-products-container .tab {
+        width: 90%;
+        border: 1px solid #1d1d1d;
+        border-bottom: none;
+    }
+}
+
+.relydev-team-products-container .content-body {
+    display: none;
+}
+
+.relydev-team-products-container .show-active {
+    display: block;
+    animation: fadeContent 1s;
+}
+
+@keyframes fadeContent {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
