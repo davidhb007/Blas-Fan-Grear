@@ -185,12 +185,6 @@
     color: white;
 }
 
-@media only screen and (max-width: 900px) {
-    .relydev-team-products-container .tab {
-        font-size: 1rem;
-    }
-}
-
 @media only screen and (max-width: 600px) {
     .relydev-team-products-container > .tab-selector {
         padding: 0;
