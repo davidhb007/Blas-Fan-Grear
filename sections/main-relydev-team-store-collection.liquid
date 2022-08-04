@@ -386,7 +386,7 @@ it is a copy of the store page template with some added modifications
                 {% endstyle %}
               {% endif %}
             {% endif %}
-            
+
             <div class="CollectionFilters">                           
               <form id="collection-filters-sidebar-form" class="collection-filters-form">
                 {{ filters_content | replace: '@@@@', 'sidebar' }}
@@ -403,20 +403,20 @@ it is a copy of the store page template with some added modifications
           <div class="relydev-team-products-container">
 
             {% comment %} Capture the different tab names dynamically from the current collection {% endcomment %}
-            {%- assign tabs = '' -%}
+            {%- assign tabs = 'shop-all' -%}
             {%- for item in collection.all_tags -%}
               {%- if item contains "tab-" -%}
                 {%- assign tab = item | remove: 'tab-' -%}
                 {%- assign tabs = tabs | append: ',' | append: tab -%}
               {%- endif -%}
             {%- endfor -%}
-            {%- assign tabs = tabs | remove_first: ',' | split: ',' -%}
-            
+            {%- assign tabs = tabs | split: ',' -%}
+
             {%- if tabs.size > 0  -%}
               {% comment %} Create the tab selector div if there are any tags {% endcomment %}
               <div class="tab-selector">
                 {%- for tab in tabs -%}
-                  <div id="{{ tab }}-tab" class="tab {% if tab == tabs.first %}tab-active{% endif %}">{{ tab | capitalize }}</div>
+                  <div id="{{ tab }}-tab" class="tab {% if tab == tabs.first %}tab-active{% endif %}">{% if tab == tabs.first%}{{ tab | capitalize | replace: '-a', ' A' }}{%else%}{{ tab | capitalize }}{%endif%}</div>
                 {%- endfor -%}
               </div>
 
@@ -429,7 +429,7 @@ it is a copy of the store page template with some added modifications
                     {%- if collection.products_count > 0 -%}
                       {%- paginate collection.products by section.settings.grid_items_per_page -%}
                         <div class="ProductListWrapper">
-                  
+
                           {%- if collection.metafields.accentuate.featured_c_image != blank and collection.metafields.accentuate.featured_c_url != blank and collection.metafields.accentuate.featured_c_heading != blank -%}
                             <div class="collection_list_wrapper">
                               {%- if collection.metafields.accentuate.c_heading != blank -%}
@@ -532,14 +532,15 @@ it is a copy of the store page template with some added modifications
                           <div class="ProductList ProductList--grid {% if paginate.pages > 1 %}ProductList--removeMargin{% endif %} Grid" data-mobile-count="{{ mobile_items_per_row }}" data-desktop-count="{{ desktop_items_per_row }}">                  
                             {% comment %} Get only the current tab content products {% endcomment %}
                             {%- assign current_tab = "tab-" | append: tab -%}
+                            <h1>{{ current_tab }}</h1>
                             {%- for product in collection.products -%}
                               {%- assign belongToTab = false -%}
                               {%- for tag in product.tags -%}
-                                {%- if tag == current_tab -%}
+                                {%- if tag == current_tab or current_tab == "tab-shop-all" -%}
                                   {%- assign belongToTab = true -%}
                                 {%- endif -%}
                               {%- endfor -%}
-                  
+
                               {%- if belongToTab -%}
                                 <div class="Grid__Cell 1/{{ mobile_items_per_row }}--phone 1/{{ tablet_items_per_row }}--tablet-and-up 1/{{ desktop_items_per_row }}--{% if section.settings.filter_position == 'drawer' %}lap-and-up{% else %}desk{% endif %}">
                                   {%- render 'product-item', product: product, show_product_info: true, show_vendor: section.settings.show_vendor, show_color_swatch: section.settings.show_color_swatch, show_labels: true -%}
@@ -581,7 +582,7 @@ it is a copy of the store page template with some added modifications
     </div>
   {%- endif -%}
 </section>
- 
+
 {% schema %}
 {
   "name": "Collection page",
