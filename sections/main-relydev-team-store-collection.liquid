@@ -427,131 +427,128 @@ it is a copy of the store page template with some added modifications
 
                     {% comment %} Insert collection products that have the corresponding tag {% endcomment %}
                     {%- if collection.products_count > 0 -%}
-                      {%- paginate collection.products by section.settings.grid_items_per_page -%}
-                        <div class="ProductListWrapper">
-
-                          {%- if collection.metafields.accentuate.featured_c_image != blank and collection.metafields.accentuate.featured_c_url != blank and collection.metafields.accentuate.featured_c_heading != blank -%}
-                            <div class="collection_list_wrapper">
-                              {%- if collection.metafields.accentuate.c_heading != blank -%}
-                                <h2>{{ collection.metafields.accentuate.c_heading }}</h2>
-                              {%- endif -%}
-                              <div class="ProductList ProductList--grid ProductList--removeMargin Grid">              
-                                {%- for multi_images in collection.metafields.accentuate.featured_c_image -%}
-                                  {%- for image in multi_images -%}
-                                    <div class="Grid__Cell 1/1--phone 1/3--tablet-and-up 1/3--desk">
-                                      <div class="Box">
-                                        {%- assign i = 1 -%}
-                                        {%- for featured_heading in collection.metafields.accentuate.featured_c_heading -%}                      
-                                          <a href="{{ collection.metafields.accentuate.featured_c_url[forloop.index0] }}" class="collection_image_{{i}}">
-                                            <img class="Image--lazyLoad" alt="" data-src="{{ image.src }}">
-                                          </a>
-                                          <div class="heading_wrapper">
-                                            <h4 class="collection_list_heading collection_list_heading_{{ i }}">
-                                              <a href="{{ collection.metafields.accentuate.featured_c_url[i] }}">{{ featured_heading }}</a>
-                                            </h4>                                                
-                                          </div>
-                                          {%- assign i = i | plus: 1 -%}
-                                        {%- endfor -%}
-                                      </div>
+                      <div class="ProductListWrapper">
+                        {%- if collection.metafields.accentuate.featured_c_image != blank and collection.metafields.accentuate.featured_c_url != blank and collection.metafields.accentuate.featured_c_heading != blank -%}
+                          <div class="collection_list_wrapper">
+                            {%- if collection.metafields.accentuate.c_heading != blank -%}
+                              <h2>{{ collection.metafields.accentuate.c_heading }}</h2>
+                            {%- endif -%}
+                            <div class="ProductList ProductList--grid ProductList--removeMargin Grid">              
+                              {%- for multi_images in collection.metafields.accentuate.featured_c_image -%}
+                                {%- for image in multi_images -%}
+                                  <div class="Grid__Cell 1/1--phone 1/3--tablet-and-up 1/3--desk">
+                                    <div class="Box">
+                                      {%- assign i = 1 -%}
+                                      {%- for featured_heading in collection.metafields.accentuate.featured_c_heading -%}                      
+                                        <a href="{{ collection.metafields.accentuate.featured_c_url[forloop.index0] }}" class="collection_image_{{i}}">
+                                          <img class="Image--lazyLoad" alt="" data-src="{{ image.src }}">
+                                        </a>
+                                        <div class="heading_wrapper">
+                                          <h4 class="collection_list_heading collection_list_heading_{{ i }}">
+                                            <a href="{{ collection.metafields.accentuate.featured_c_url[i] }}">{{ featured_heading }}</a>
+                                          </h4>                                                
+                                        </div>
+                                        {%- assign i = i | plus: 1 -%}
+                                      {%- endfor -%}
                                     </div>
-                                  {%- endfor -%}
+                                  </div>
                                 {%- endfor -%}
-                              </div>
+                              {%- endfor -%}
                             </div>
-                  
-                            <style type="text/css">
-                              .collection_list_wrapper{
-                                overflow: hidden;
-                                margin-bottom: 40px;
-                              }
+                          </div>
+                
+                          <style type="text/css">
+                            .collection_list_wrapper{
+                              overflow: hidden;
+                              margin-bottom: 40px;
+                            }
+                            .collection_list_wrapper h2{
+                              text-align: center;
+                              font-size: 40px;
+                            }
+                            .collection_list_heading{
+                              text-align: center;
+                              margin-top: 15px;
+                              font-size: 24px;
+                            }
+                            .collection_list_wrapper .Grid__Cell .collection_list_heading{
+                              display: none;
+                            }            
+                            .collection_list_wrapper .Grid__Cell:first-child .collection_image_2, .collection_list_wrapper .Grid__Cell:first-child .collection_image_3{
+                              display: none;
+                            }
+                            .collection_list_wrapper .Grid__Cell:first-child .collection_image_4, .collection_list_wrapper .Grid__Cell:first-child .collection_image_5, .collection_list_wrapper .Grid__Cell:first-child .collection_image_6{
+                              display: none;
+                            }
+                            .collection_list_wrapper .Grid__Cell:nth-of-type(2) .collection_image_1, .collection_list_wrapper .Grid__Cell:nth-of-type(2) .collection_image_3{
+                              display: none;
+                            }
+                            .collection_list_wrapper .Grid__Cell:nth-of-type(2) .collection_image_4, .collection_list_wrapper .Grid__Cell:nth-of-type(2) .collection_image_5, .collection_list_wrapper .Grid__Cell:nth-of-type(2) .collection_image_6{
+                              display: none;
+                            }
+                            .collection_list_wrapper .Grid__Cell:nth-of-type(3) .collection_image_1, .collection_list_wrapper .Grid__Cell:nth-of-type(3) .collection_image_2{
+                              display: none;
+                            }
+                            .collection_list_wrapper .Grid__Cell:nth-of-type(3) .collection_image_4, .collection_list_wrapper .Grid__Cell:nth-of-type(3) .collection_image_5, .collection_list_wrapper .Grid__Cell:nth-of-type(3) .collection_image_6{
+                              display: none;
+                            }          
+                            .collection_list_wrapper .Grid__Cell:nth-of-type(4) .collection_image_2, .collection_list_wrapper .Grid__Cell:nth-of-type(4) .collection_image_3{
+                              display: none;
+                            }
+                            .collection_list_wrapper .Grid__Cell:nth-of-type(4) .collection_image_4, .collection_list_wrapper .Grid__Cell:nth-of-type(4) .collection_image_5, .collection_list_wrapper .Grid__Cell:nth-of-type(4) .collection_image_6{
+                              display: none;
+                            }
+                            .collection_list_wrapper .Grid__Cell:nth-of-type(5) .collection_image_1, .collection_list_wrapper .Grid__Cell:nth-of-type(5) .collection_image_2{
+                              display: none;
+                            }
+                            .collection_list_wrapper .Grid__Cell:nth-of-type(5) .collection_image_3, .collection_list_wrapper .Grid__Cell:nth-of-type(5) .collection_image_4, .collection_list_wrapper .Grid__Cell:nth-of-type(5) .collection_image_6{
+                              display: none;
+                            }
+                            .collection_list_wrapper .Grid__Cell:nth-of-type(6) .collection_image_1, .collection_list_wrapper .Grid__Cell:nth-of-type(6) .collection_image_2{
+                              display: none;
+                            }
+                            .collection_list_wrapper .Grid__Cell:nth-of-type(6) .collection_image_3, .collection_list_wrapper .Grid__Cell:nth-of-type(6) .collection_image_4, .collection_list_wrapper .Grid__Cell:nth-of-type(6) .collection_image_5{
+                              display: none;
+                            }          
+                            .collection_list_wrapper .Grid__Cell:first-child .collection_list_heading_1{
+                              display: block;
+                            }
+                            .collection_list_wrapper .Grid__Cell:nth-of-type(2) .collection_list_heading_2{
+                              display: block;
+                            }
+                            .collection_list_wrapper .Grid__Cell:nth-of-type(3) .collection_list_heading_3{
+                              display: block;
+                            }
+                            @media only screen and (max-width: 640px){
                               .collection_list_wrapper h2{
-                                text-align: center;
-                                font-size: 40px;
+                                font-size: 32px;
                               }
-                              .collection_list_heading{
-                                text-align: center;
-                                margin-top: 15px;
-                                font-size: 24px;
-                              }
-                              .collection_list_wrapper .Grid__Cell .collection_list_heading{
-                                display: none;
-                              }            
-                              .collection_list_wrapper .Grid__Cell:first-child .collection_image_2, .collection_list_wrapper .Grid__Cell:first-child .collection_image_3{
-                                display: none;
-                              }
-                              .collection_list_wrapper .Grid__Cell:first-child .collection_image_4, .collection_list_wrapper .Grid__Cell:first-child .collection_image_5, .collection_list_wrapper .Grid__Cell:first-child .collection_image_6{
-                                display: none;
-                              }
-                              .collection_list_wrapper .Grid__Cell:nth-of-type(2) .collection_image_1, .collection_list_wrapper .Grid__Cell:nth-of-type(2) .collection_image_3{
-                                display: none;
-                              }
-                              .collection_list_wrapper .Grid__Cell:nth-of-type(2) .collection_image_4, .collection_list_wrapper .Grid__Cell:nth-of-type(2) .collection_image_5, .collection_list_wrapper .Grid__Cell:nth-of-type(2) .collection_image_6{
-                                display: none;
-                              }
-                              .collection_list_wrapper .Grid__Cell:nth-of-type(3) .collection_image_1, .collection_list_wrapper .Grid__Cell:nth-of-type(3) .collection_image_2{
-                                display: none;
-                              }
-                              .collection_list_wrapper .Grid__Cell:nth-of-type(3) .collection_image_4, .collection_list_wrapper .Grid__Cell:nth-of-type(3) .collection_image_5, .collection_list_wrapper .Grid__Cell:nth-of-type(3) .collection_image_6{
-                                display: none;
-                              }          
-                              .collection_list_wrapper .Grid__Cell:nth-of-type(4) .collection_image_2, .collection_list_wrapper .Grid__Cell:nth-of-type(4) .collection_image_3{
-                                display: none;
-                              }
-                              .collection_list_wrapper .Grid__Cell:nth-of-type(4) .collection_image_4, .collection_list_wrapper .Grid__Cell:nth-of-type(4) .collection_image_5, .collection_list_wrapper .Grid__Cell:nth-of-type(4) .collection_image_6{
-                                display: none;
-                              }
-                              .collection_list_wrapper .Grid__Cell:nth-of-type(5) .collection_image_1, .collection_list_wrapper .Grid__Cell:nth-of-type(5) .collection_image_2{
-                                display: none;
-                              }
-                              .collection_list_wrapper .Grid__Cell:nth-of-type(5) .collection_image_3, .collection_list_wrapper .Grid__Cell:nth-of-type(5) .collection_image_4, .collection_list_wrapper .Grid__Cell:nth-of-type(5) .collection_image_6{
-                                display: none;
-                              }
-                              .collection_list_wrapper .Grid__Cell:nth-of-type(6) .collection_image_1, .collection_list_wrapper .Grid__Cell:nth-of-type(6) .collection_image_2{
-                                display: none;
-                              }
-                              .collection_list_wrapper .Grid__Cell:nth-of-type(6) .collection_image_3, .collection_list_wrapper .Grid__Cell:nth-of-type(6) .collection_image_4, .collection_list_wrapper .Grid__Cell:nth-of-type(6) .collection_image_5{
-                                display: none;
-                              }          
-                              .collection_list_wrapper .Grid__Cell:first-child .collection_list_heading_1{
-                                display: block;
-                              }
-                              .collection_list_wrapper .Grid__Cell:nth-of-type(2) .collection_list_heading_2{
-                                display: block;
-                              }
-                              .collection_list_wrapper .Grid__Cell:nth-of-type(3) .collection_list_heading_3{
-                                display: block;
-                              }
-                              @media only screen and (max-width: 640px){
-                                .collection_list_wrapper h2{
-                                  font-size: 32px;
-                                }
-                              }
-                            </style>
-                          {%- endif -%}
-                  
-                          <div class="ProductList ProductList--grid {% if paginate.pages > 1 %}ProductList--removeMargin{% endif %} Grid" data-mobile-count="{{ mobile_items_per_row }}" data-desktop-count="{{ desktop_items_per_row }}">                  
-                            {% comment %} Get only the current tab content products {% endcomment %}
-                            {%- assign current_tab = "tab-" | append: tab -%}
-                            <h1>{{ current_tab }}</h1>
-                            {%- for product in collection.products -%}
+                            }
+                          </style>
+                        {%- endif -%}
+                
+                        <div class="ProductList ProductList--grid {% if paginate.pages > 1 %}ProductList--removeMargin{% endif %} Grid" data-mobile-count="{{ mobile_items_per_row }}" data-desktop-count="{{ desktop_items_per_row }}">                  
+                          {% comment %} Get only the current tab content products {% endcomment %}
+                          {%- assign current_tab = "tab-" | append: tab -%}
+                          {% paginate collection.products by 500 %}
+                            {% for product in collection.products %}
                               {%- assign belongToTab = false -%}
                               {%- for tag in product.tags -%}
+                                The current tab: {{ current_tab }}, the product tag: {{ tag }}
                                 {%- if tag == current_tab or current_tab == "tab-shop-all" -%}
                                   {%- assign belongToTab = true -%}
                                 {%- endif -%}
                               {%- endfor -%}
-
+    
                               {%- if belongToTab -%}
                                 <div class="Grid__Cell 1/{{ mobile_items_per_row }}--phone 1/{{ tablet_items_per_row }}--tablet-and-up 1/{{ desktop_items_per_row }}--{% if section.settings.filter_position == 'drawer' %}lap-and-up{% else %}desk{% endif %}">
                                   {%- render 'product-item', product: product, show_product_info: true, show_vendor: section.settings.show_vendor, show_color_swatch: section.settings.show_color_swatch, show_labels: true -%}
                                 </div>
                               {%- endif -%}
-                            {%- endfor -%}
-                          </div>
+                            {% endfor %}
+                          {% endpaginate %}
                         </div>
-                  
-                        {%- render 'pagination', paginate: paginate -%}
-                      {%- endpaginate -%}
+                      </div>
                     {%- else -%}
                       <div class="EmptyState">
                         <div class="Container">
@@ -580,7 +577,25 @@ it is a copy of the store page template with some added modifications
       </div>
     </div>
   {%- endif -%}
+  {% comment %} Back to top button {% endcomment %}
+  <div id="relydev-back-top-top-btn">Top</div>
 </section>
+
+{% javascript %}
+  // The following takes care of the sroll to top functionality
+  let relydevBackToTopBtn = document.getElementById("relydev-back-top-top-btn");
+  relydevBackToTopBtn.addEventListener("click", function(){
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+
+  window.onscroll = function() { topBtnToggle() };
+
+  function topBtnToggle() {
+    if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 600) {
+      relydevBackToTopBtn.style.display = 'block';
+    }else { relydevBackToTopBtn.style.display = 'none' }
+  }
+{% endjavascript %}
 
 {% schema %}
 {
@@ -725,8 +740,8 @@ it is a copy of the store page template with some added modifications
       "id": "grid_items_per_page",
       "label": "Products per page",
       "min": 4,
-      "max": 48,
-      "step": 4,
+      "max": 200,
+      "step": 2,
       "default": 16
     },
     {

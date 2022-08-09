@@ -212,6 +212,36 @@
     animation: fadeContent 1s;
 }
 
+#relydev-back-top-top-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 99;
+    font-size: 18px;
+    font-weight: bolder;
+    border: none;
+    outline: none;
+    background-color: rgba(200, 200, 200, 0.8);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 100%;
+    transition: background-color 0.8s;
+    -webkit-transition: background-color 0.8s;
+}
+
+#relydev-back-top-top-btn:hover {
+    background-color: black;
+}
+
+@media only screen and (min-width: 1008px) {
+    #relydev-back-top-top-btn {
+        transform: translateX(270%);
+    }
+}
+
 @keyframes fadeContent {
     0% {
         opacity: 0;
