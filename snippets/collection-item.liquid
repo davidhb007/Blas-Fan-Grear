@@ -4,7 +4,7 @@
   {%- capture mobile_size -%}750x{% if collection_image.height >= 960 %}960{% else %}{{ collection_image.height }}{% endif %}{%- endcapture -%}
   {%- assign image_crop = block.settings.image_alignment | split: ' ' | last -%}
 
-  {%- assign templateType = template.suffix | split: '.' | last -%}
+  {%- assign templateType = template.suffix | split: '_' | last -%}
 
   {%- if request.page_type == 'collection' and templateType == 'school-page' -%}
     <div id="relydev-school-sport-collection-item" class="CollectionItem__Wrapper CollectionItem__Wrapper--{{ section.settings.image_size }}" {% if collection_image %}style="background-image: url({{ collection_image | img_url: '1x1' }})"{% endif %}>
