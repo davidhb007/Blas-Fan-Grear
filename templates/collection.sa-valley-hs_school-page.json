@@ -1,0 +1,102 @@
+{
+  "sections": {
+    "16587631541516063d": {
+      "type": "relydev-school-page-hero",
+      "settings": {
+        "subheading": "",
+        "title": "{{ collection.title }}",
+        "image": "{{ collection.image }}",
+        "image_position": "left",
+        "content": "",
+        "link_text": "",
+        "link_url": ""
+      }
+    },
+    "1658765692d9be7e38": {
+      "type": "relydev-school-teams-collection-list",
+      "blocks": {
+        "9b58849e-357a-49b6-aa35-0e8520a3507f": {
+          "type": "collection",
+          "settings": {
+            "collection": "santa-ana-valley-hs-boys-basketball",
+            "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "SHOP TEAM",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "69501d57-da28-4714-a730-484d928b525c": {
+          "type": "collection",
+          "settings": {
+            "collection": "santa-ana-valley-hs-football",
+            "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "6477cd52-9721-439f-b151-7b03a4395945": {
+          "type": "collection",
+          "settings": {
+            "collection": "santa-ana-valley-hs-girls-basketball-fan-store",
+            "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        }
+      },
+      "block_order": [
+        "9b58849e-357a-49b6-aa35-0e8520a3507f",
+        "69501d57-da28-4714-a730-484d928b525c",
+        "6477cd52-9721-439f-b151-7b03a4395945"
+      ],
+      "settings": {
+        "title": "School Teams",
+        "image_size": "small",
+        "add_spacing": true,
+        "expand_collection": false,
+        "stack_on_mobile": true,
+        "text_color": "#ffffff",
+        "button_color": "#363636"
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "disabled": true,
+      "settings": {
+        "show_collection_info": true,
+        "show_collection_image": false,
+        "apply_overlay": true,
+        "show_color_swatch": false,
+        "show_vendor": false,
+        "collection_image_size": "normal",
+        "show_sort_by": true,
+        "show_layout_switch": false,
+        "toolbar_position": "top",
+        "show_filters": true,
+        "show_filter_color_swatch": true,
+        "expand_filters": true,
+        "filter_position": "sidebar",
+        "filter_menu": "",
+        "grid_items_per_page": 16,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4
+      }
+    }
+  },
+  "order": [
+    "16587631541516063d",
+    "1658765692d9be7e38",
+    "main"
+  ]
+}
