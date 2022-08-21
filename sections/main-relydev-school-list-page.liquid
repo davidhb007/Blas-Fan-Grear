@@ -1,0 +1,69 @@
+<section id="section-{{ section.id }}" class="stores-list-section">
+
+  <div class="relydev-school-list-container">
+
+    {% comment %} Capture the different possible school states and sort them in an array {% endcomment %}
+    {%- assign listOfStates = 'All' -%}
+    {%- for collection in collections -%}
+      {%- if collection.metafields.custom.school-state -%}
+        {%- assign listOfStates = listOfStates | append: ',' | append: collection.metafields.custom.school-state.value -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- assign listOfStates = listOfStates | split: ',' | uniq | sort -%}
+    
+    {% comment %} Create the tab selector div if there are any tags {% endcomment %}
+    <div class="tab-selector">
+      {%- for tab in listOfStates -%}
+        <div id="{{ tab }}-tab" class="tab {% if tab == listOfStates.first %}tab-active{% endif %}">{{ tab }}</div>
+      {%- endfor -%}
+    </div>
+    
+    {% comment %} Create the School list content wrapper for each tab {% endcomment %}
+    <div class="relydev-tab-content">
+      {%- for tab in listOfStates -%}
+        <div id="{{ tab }}-contents" class="content-body {% if tab == listOfStates.first %}show-active{% endif %}">
+          <div class="CollectionList CollectionList--grid CollectionList--spaced">
+            {%- for collection in collections -%}
+              {%- if tab == listOfStates.first and collection.metafields.custom.school-state.value -%}
+                {% render 'relydev-school-list-item', block: block, collection: collection %}
+              {%- endif -%}
+              {%- if collection.metafields.custom.school-state.value == tab -%}
+                {% render 'relydev-school-list-item', block: block, collection: collection %}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<style>
+  @media only screen and (max-width: 600px) {
+    .relydev-school-list-container >.tab-selector {
+      flex-direction: row;
+      border-bottom: 1px solid #1d1d1d;
+    }
+    .relydev-school-list-container >.tab-selector > .tab {
+      width: 20%;
+    }
+  }
+</style>
+
+<script>
+
+</script>
+
+{% schema %}
+{
+  "name": "Page",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_large",
+      "label": "Large width",
+      "default": false
+    }
+  ]
+}
+{% endschema %}

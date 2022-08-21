@@ -13,6 +13,10 @@ function setNewActiveTab(target) {
         document
             .getElementById("Shop-all-contents")
             .classList.add("show-active");
+    } else if (target.id == "All Schools-tab") {
+        document
+            .getElementById("All Schools-contents")
+            .classList.add("show-active");
     } else {
         document
             .getElementById(target.textContent.trim().concat("-contents"))

@@ -413,7 +413,6 @@ it is a copy of the store page template with some added modifications
             {%- assign tabs = tabs | split: ',' -%}
 
             {%- if tabs.size > 0  -%}
-              {% comment %} Create the tab selector div if there are any tags {% endcomment %}
               <div class="tab-selector">
                 {%- for tab in tabs -%}
                   <div id="{{ tab }}-tab" class="tab {% if tab == tabs.first %}tab-active{% endif %}">{% if tab == tabs.first%}{{ tab | capitalize | replace: '-a', ' A' }}{%else%}{{ tab | capitalize }}{%endif%}</div>
@@ -534,7 +533,6 @@ it is a copy of the store page template with some added modifications
                             {% for product in collection.products %}
                               {%- assign belongToTab = false -%}
                               {%- for tag in product.tags -%}
-                                The current tab: {{ current_tab }}, the product tag: {{ tag }}
                                 {%- if tag == current_tab or current_tab == "tab-shop-all" -%}
                                   {%- assign belongToTab = true -%}
                                 {%- endif -%}

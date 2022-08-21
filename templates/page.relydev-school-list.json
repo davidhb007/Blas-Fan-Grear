@@ -1,0 +1,11 @@
+{
+    "sections": {
+        "main": {
+            "type": "main-relydev-school-list-page",
+            "settings": {
+                "show_large": false
+            }
+        }
+    },
+    "order": ["main"]
+}
