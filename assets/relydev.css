@@ -253,68 +253,201 @@
         max-width: 50% !important;
     }
 }
-
-.relydev-school-list-container > .tab-selector {
+.relydev-school-list-container .slider {
+    position: relative;
+    overflow: hidden;
+}
+.relydev-school-list-container .slider .tab-selector {
+    padding: 0;
     display: flex;
-    justify-content: center;
-    padding: 0 50px;
-    margin-bottom: 40px;
-}
+    overflow: hidden;
+    overflow-x: scroll;
+    margin-bottom: -15px;
+    user-select: none;
+    transition: all 0.2s;
+    transform: scale(0.98);
+    will-change: transform;
 
-.relydev-school-list-container > .tab-selector :first-child {
-    border-left: 1px solid #a1a1a1;
+    margin-block-start: 0 !important;
+    margin-inline-start: 0 !important;
+    margin-inline-end: 0 !important;
+    padding-inline-start: 0 !important;
 }
-
-.relydev-school-list-container > .tab-selector :last-child {
-    border-right: 1px solid #a1a1a1;
+.slider-inner-shadow-right {
+    box-shadow: inset -15px -10px 15px -5px #888;
+    -moz-box-shadow: inset -15px -10px 15px -5px #888;
+    -webkit-box-shadow: inset -15px -10px 15px -5px #888;
+    -o-box-shadow: inset -15px -10px 15px -5px #888;
 }
-
+.slider-inner-shadow-left {
+    box-shadow: inset 15px -10px 15px -5px #888;
+    -moz-box-shadow: inset 15px -10px 15px -5px #888;
+    -webkit-box-shadow: inset 15px -10px 15px -5px #888;
+    -o-box-shadow: inset 15px -10px 15px -5px #888;
+}
+.slider-inner-shadow-both {
+    box-shadow: inset 15px -10px 15px -5px #888, inset -5px -10px 15px 5px #888;
+    -moz-box-shadow: inset 15px -10px 15px -5px #888,
+        inset -5px -10px 15px 5px #888;
+    -webkit-box-shadow: inset 15px -10px 15px -5px #888,
+        inset -5px -10px 15px 5px #888;
+    -o-box-shadow: inset 15px -10px 15px -5px #888,
+        inset -5px -10px 15px 5px #888;
+}
+.relydev-school-list-container .slider .tab-selector:active:hover {
+    transform: scale(1.1);
+}
 .relydev-school-list-container .tab {
-    flex-grow: 1;
-    padding: 13px 0;
-    font-size: 1.2rem;
-    text-align: center;
     border-top: 1px solid #a1a1a1;
     border-bottom: 1px solid #a1a1a1;
+    border-right: 1px solid #a1a1a1;
+    padding: 13px 0 10px;
+    font-size: 1.2rem;
+    text-align: center;
     box-sizing: border-box !important;
     transition: background-color 0.4s ease-in;
-}
 
+    scroll-snap-align: start;
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 16%;
+    overflow: hidden;
+}
+.relydev-school-list-container .slider .tab-selector :first-child {
+    border-left: 1px solid #a1a1a1;
+}
 .relydev-school-list-container .tab:hover:not(.tab-active) {
     background-color: #adadad;
     cursor: pointer;
 }
-
 .relydev-school-list-container .tab-active {
     background-color: #1d1d1d;
     color: white;
 }
 
-@media only screen and (max-width: 600px) {
-    .relydev-school-list-container > .tab-selector {
-        padding: 0;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-    .relydev-school-list-container > .tab-selector :last-child {
-        border-bottom: 1px solid #1d1d1d;
-    }
-    .relydev-school-list-container .tab {
-        width: 90%;
-        border: 1px solid #1d1d1d;
-        border-bottom: none;
-        font-size: 1.2rem;
-    }
-}
-
 .relydev-school-list-container .content-body {
     display: none;
+    background-color: white;
+    margin: 20px 8px 0;
 }
-
 .relydev-school-list-container .show-active {
     display: block;
     animation: fadeContent 1s;
+}
+.relydev-school-list-container #relydev-back-top-top-btn {
+    transform: translateX(100%);
+}
+
+/* Styling of the School List Collection Items */
+#relydev-school-list-collection-item {
+    display: flex;
+    align-items: center;
+}
+.relydev-school-list-container .content-body .CollectionList .CollectionItem {
+    min-width: 50%;
+}
+#relydev-school-list-collection-item > .School-logo-image-wrapper {
+    min-width: 45%;
+    padding-right: 20px;
+}
+#relydev-school-list-collection-item
+    > .School-logo-image-wrapper
+    > .school-logo-image {
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    aspect-ratio: 1.5;
+}
+#relydev-school-list-collection-item > .School-content-wrapper .Heading {
+    font-size: 1.1em;
+}
+
+@media screen and (max-width: 400px) {
+    .relydev-school-list-container .tab {
+        width: 22%;
+    }
+    #relydev-school-list-collection-item {
+        flex-direction: column;
+        align-items: center;
+    }
+    #relydev-school-list-collection-item > .School-logo-image-wrapper {
+        min-width: 80%;
+        padding-bottom: 20px;
+    }
+}
+@media screen and (min-width: 914px) {
+    .relydev-school-list-container
+        .content-body
+        .CollectionList
+        .CollectionItem {
+        min-width: 50%;
+    }
+    #relydev-school-list-collection-item {
+        display: flex;
+        align-items: center;
+    }
+    #relydev-school-list-collection-item > .School-logo-image-wrapper {
+        min-width: 45%;
+        padding-right: 20px;
+    }
+    #relydev-school-list-collection-item
+        > .School-logo-image-wrapper
+        > .school-logo-image {
+        height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        aspect-ratio: 1.5;
+    }
+    #relydev-school-list-collection-item > .School-content-wrapper .Heading {
+        font-size: 1.3em;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .relydev-school-list-container .tab {
+        width: 10%;
+        font-size: 1;
+    }
+}
+@media only screen and (min-width: 1500px) {
+    .relydev-school-list-container
+        .content-body
+        .CollectionList
+        .CollectionItem {
+        min-width: 33.33%;
+    }
+    #relydev-school-list-collection-item > .School-content-wrapper .Heading {
+        font-size: 1.5em;
+    }
+}
+.relydev-school-list-container .content-body .CollectionList .CollectionItem {
+    position: relative;
+    padding: 15px;
+}
+.relydev-school-list-container
+    .content-body
+    .CollectionList
+    .CollectionItem
+    > .relydev-school-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
+.relydev-school-list-container
+    .content-body
+    .CollectionList
+    .CollectionItem
+    > .relydev-school-overlay:hover {
+    opacity: 0.4;
 }
 
 @keyframes fadeContent {

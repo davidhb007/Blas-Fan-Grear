@@ -579,22 +579,6 @@ it is a copy of the store page template with some added modifications
   <div id="relydev-back-top-top-btn">Top</div>
 </section>
 
-{% javascript %}
-  // The following takes care of the sroll to top functionality
-  let relydevBackToTopBtn = document.getElementById("relydev-back-top-top-btn");
-  relydevBackToTopBtn.addEventListener("click", function(){
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  });
-
-  window.onscroll = function() { topBtnToggle() };
-
-  function topBtnToggle() {
-    if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 600) {
-      relydevBackToTopBtn.style.display = 'block';
-    }else { relydevBackToTopBtn.style.display = 'none' }
-  }
-{% endjavascript %}
-
 {% schema %}
 {
   "name": "Collection page",

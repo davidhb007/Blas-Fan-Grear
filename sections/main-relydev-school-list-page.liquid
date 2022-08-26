@@ -3,26 +3,29 @@
   <div class="relydev-school-list-container">
 
     {% comment %} Capture the different possible school states and sort them in an array {% endcomment %}
-    {%- assign listOfStates = 'All' -%}
+    {%- assign listOfStates = '' -%}
     {%- for collection in collections -%}
       {%- if collection.metafields.custom.school-state -%}
         {%- assign listOfStates = listOfStates | append: ',' | append: collection.metafields.custom.school-state.value -%}
       {%- endif -%}
     {%- endfor -%}
-    {%- assign listOfStates = listOfStates | split: ',' | uniq | sort -%}
+    {%- assign listOfStates = listOfStates | split: ',' | uniq | sort | join: ',' | prepend: 'All' -%}
+    {%- assign listOfStates = listOfStates | split: ',' -%}
     
     {% comment %} Create the tab selector div if there are any tags {% endcomment %}
-    <div class="tab-selector">
-      {%- for tab in listOfStates -%}
-        <div id="{{ tab }}-tab" class="tab {% if tab == listOfStates.first %}tab-active{% endif %}">{{ tab }}</div>
-      {%- endfor -%}
+    <div class="slider">
+      <div class="tab-selector">
+        {%- for tab in listOfStates -%}
+          <div id="{{ tab }}-tab" class="tab {% if tab == listOfStates.first %}tab-active{% endif %}">{{ tab }}</div>
+        {%- endfor -%}
+      </div>
     </div>
     
     {% comment %} Create the School list content wrapper for each tab {% endcomment %}
     <div class="relydev-tab-content">
       {%- for tab in listOfStates -%}
         <div id="{{ tab }}-contents" class="content-body {% if tab == listOfStates.first %}show-active{% endif %}">
-          <div class="CollectionList CollectionList--grid CollectionList--spaced">
+          <div class="CollectionList CollectionList--grid">
             {%- for collection in collections -%}
               {%- if tab == listOfStates.first and collection.metafields.custom.school-state.value -%}
                 {% render 'relydev-school-list-item', block: block, collection: collection %}
@@ -35,24 +38,42 @@
         </div>
       {%- endfor -%}
     </div>
+    
+    {% comment %} Back to top button {% endcomment %}
+    <div id="relydev-back-top-top-btn">Top</div>
   </div>
+  
 </section>
 
 <style>
-  @media only screen and (max-width: 600px) {
-    .relydev-school-list-container >.tab-selector {
-      flex-direction: row;
-      border-bottom: 1px solid #1d1d1d;
+  .relydev-school-list-container {
+    padding: 0 40px;
+    margin-bottom: 60px;
+  }
+  @media only screen and (max-width: 500px) {
+    .relydev-school-list-container .relydev-tab-content .content-body .CollectionList {
+      margin-right: 0px;
+      margin-left: 0px;
     }
-    .relydev-school-list-container >.tab-selector > .tab {
-      width: 20%;
+    .relydev-school-list-container .relydev-tab-content .content-body .CollectionList .CollectionItem {
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .relydev-school-list-container {
+      padding: 30px 5px 0;
+    }
+    .relydev-school-list-container .tab {
+      padding-bottom: 25px;
+    }
+  }
+  @media only screen and (min-width: 601px) {
+    .relydev-school-list-container {
+      padding-top: 60px;
     }
   }
 </style>
-
-<script>
-
-</script>
 
 {% schema %}
 {
