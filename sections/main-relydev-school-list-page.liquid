@@ -14,6 +14,8 @@
     
     {% comment %} Create the tab selector div if there are any tags {% endcomment %}
     <div class="slider">
+      <div id="relydev-left-arrow" class="relydev-tab-arrow" style="background-image: url({{ 'left-arrow.png' | asset_url }})"></div>
+      <div id="relydev-right-arrow" class="relydev-tab-arrow" style="background-image: url({{ 'right-arrow.png' | asset_url }})"></div>
       <div class="tab-selector">
         {%- for tab in listOfStates -%}
           <div id="{{ tab }}-tab" class="tab {% if tab == listOfStates.first %}tab-active{% endif %}">{{ tab }}</div>
@@ -47,7 +49,7 @@
 
 <style>
   .relydev-school-list-container {
-    padding: 0 40px;
+    padding: 50px 40px 0;
     margin-bottom: 60px;
   }
   @media only screen and (max-width: 500px) {
@@ -64,10 +66,6 @@
     .relydev-school-list-container {
       padding: 30px 5px 0;
     }
-    .relydev-school-list-container .tab {
-      padding-bottom: 25px;
-    }
-  }
   @media only screen and (min-width: 601px) {
     .relydev-school-list-container {
       padding-top: 60px;

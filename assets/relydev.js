@@ -52,10 +52,13 @@ function topBtnToggle() {
     }
 }
 
-//RelyDev method to make Blog Categories Buttons Scrollable with mouse
+//RelyDev method to make Blog Categories Buttons Scrollable with mouse and touch
+const leftArrow = document.querySelector("#relydev-left-arrow");
+const rightArrow = document.querySelector("#relydev-right-arrow");
+const slider = document.querySelector(".tab-selector");
+
 function makeScrollableButtons(x) {
     if (x.matches) {
-        const slider = document.querySelector(".tab-selector");
         const itsLinks = document.querySelectorAll(".tab");
         let isDown = false;
         let isLinkDisabled = false;
@@ -137,7 +140,7 @@ function makeScrollableButtons(x) {
             e.preventDefault();
             sliderInnerShadow();
             const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 1.2;
+            const walk = (x - startX) * 1.5;
             slider.scrollLeft = scrollLeft - walk;
         });
         slider.addEventListener("scroll", (e) => {
@@ -146,30 +149,62 @@ function makeScrollableButtons(x) {
     }
 }
 
-function sliderInnerShadow() {
-    const tabSelector = document.querySelector(".tab-selector");
-    const firstTab = document.querySelector(".tab-selector").firstElementChild;
-    const lastTab = document.querySelector(".tab-selector").lastElementChild;
+//Functionality for tab slider Arrows
+leftArrow.addEventListener("click", (e) => {
+    // Left Arrow scroll left on click
+    let scrollDistance = slider.firstChild.clientWidth * 3;
+    slider.scrollBy({
+        top: 0,
+        left: -scrollDistance,
+        behavior: "smooth",
+    });
+});
 
+rightArrow.addEventListener("click", (e) => {
+    // Right Arrow scroll right on click
+    let scrollDistance = slider.firstChild.clientWidth * 3;
+    slider.scrollBy({
+        top: 0,
+        left: scrollDistance,
+        behavior: "smooth",
+    });
+});
+
+const tabSelector = document.querySelector(".tab-selector");
+const firstTab = document.querySelector(".tab-selector").firstElementChild;
+const lastTab = document.querySelector(".tab-selector").lastElementChild;
+function sliderInnerShadow() {
     let initialPosition =
-        tabSelector.getBoundingClientRect().left <=
-        firstTab.getBoundingClientRect().left;
+        Math.floor(tabSelector.getBoundingClientRect().left) <=
+        Math.floor(firstTab.getBoundingClientRect().left);
     let maxScroll =
-        tabSelector.getBoundingClientRect().right >=
-        lastTab.getBoundingClientRect().right;
+        Math.floor(tabSelector.getBoundingClientRect().right) >=
+        Math.floor(lastTab.getBoundingClientRect().right);
 
     if (!initialPosition && !maxScroll) {
         tabSelector.classList.remove("slider-inner-shadow-left");
         tabSelector.classList.remove("slider-inner-shadow-right");
         tabSelector.classList.add("slider-inner-shadow-both");
+        leftArrow.classList.add("relydev-tab-arrow-show");
+        rightArrow.classList.add("relydev-tab-arrow-show");
     } else if (initialPosition && !maxScroll) {
         tabSelector.classList.remove("slider-inner-shadow-left");
         tabSelector.classList.remove("slider-inner-shadow-both");
         tabSelector.classList.add("slider-inner-shadow-right");
+        leftArrow.classList.remove("relydev-tab-arrow-show");
+        rightArrow.classList.add("relydev-tab-arrow-show");
     } else if (maxScroll && !initialPosition) {
         tabSelector.classList.remove("slider-inner-shadow-right");
         tabSelector.classList.remove("slider-inner-shadow-both");
         tabSelector.classList.add("slider-inner-shadow-left");
+        leftArrow.classList.add("relydev-tab-arrow-show");
+        rightArrow.classList.remove("relydev-tab-arrow-show");
+    } else if (maxScroll && initialPosition) {
+        tabSelector.classList.remove("slider-inner-shadow-left");
+        tabSelector.classList.remove("slider-inner-shadow-right");
+        tabSelector.classList.remove("slider-inner-shadow-both");
+        leftArrow.classList.remove("relydev-tab-arrow-show");
+        rightArrow.classList.remove("relydev-tab-arrow-show");
     }
 }
 
