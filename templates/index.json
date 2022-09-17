@@ -5,14 +5,14 @@
       "settings": {
         "bg_img": "shopify:\/\/shop_images\/hero.jpg",
         "section_size": "large",
-        "enable_search": true,
+        "enable_search": false,
         "desktop_text_color": "#ffffff",
         "mobile_text_color": "#000000",
         "title": "Custom fan gear",
         "subheading": "& team stores",
         "search_title": "",
-        "btn_url_1": "shopify:\/\/collections\/custom-t-shirt",
-        "btn_label_1": "Design Gear",
+        "btn_url_1": "https:\/\/www.blastfangear.com\/pages\/school-stores",
+        "btn_label_1": "Find Your School\/Team",
         "btn_url_2": "https:\/\/www.blastfangear.com\/pages\/create-a-store-1",
         "btn_label_2": "Create a store",
         "image": "shopify:\/\/shop_images\/video_bg.png",
@@ -68,11 +68,12 @@
     },
     "16310248190e6bd00d": {
       "type": "index-image-with-search",
+      "disabled": true,
       "settings": {
         "title": "Find Your School, Team or Group",
         "title_color": "#ffffff",
         "bg_image": "shopify:\/\/shop_images\/hero.jpg",
-        "show_search": true,
+        "show_search": false,
         "image_title": "<p>Can't find your program?<br\/>Use our store<\/p>",
         "image": "shopify:\/\/shop_images\/Product_fee30700-8fe3-4c65-921e-57f5d119b6ff.png",
         "bg_color": "#e9ecef",
@@ -137,6 +138,7 @@
     },
     "163068448507fa7d11": {
       "type": "shop-now",
+      "disabled": true,
       "blocks": {
         "163068448572fdb235-0": {
           "type": "quote",
@@ -171,11 +173,11 @@
         "163068789592eb032e-0": {
           "type": "collection",
           "settings": {
-            "collection": "el-modena-hs-fan-store",
+            "collection": "jserra-hs-fan-store",
             "image_alignment": "center center",
             "content_position": "bottomCenter",
             "subheading": "",
-            "title": "El Modena HS Fan Store",
+            "title": "JSerra HS Fan Store",
             "button_text": "View products",
             "button_link": "shopify:\/\/collections\/el-modena-hs-fan-store",
             "apply_overlay": true
@@ -184,11 +186,12 @@
         "163068789592eb032e-1": {
           "type": "collection",
           "settings": {
-            "collection": "fabens-store",
+            "collection": "centennial-hs-football-fan-store",
+            "image": "shopify:\/\/shop_images\/Centennial-PrimaryLogo1.jpg",
             "image_alignment": "center center",
             "content_position": "bottomCenter",
             "subheading": "",
-            "title": "Fabens HS Fan Store",
+            "title": "Centennial HS Football Fan Store",
             "button_text": "View products",
             "button_link": "shopify:\/\/collections\/fabens-store",
             "apply_overlay": true
@@ -197,11 +200,12 @@
         "163068789592eb032e-2": {
           "type": "collection",
           "settings": {
-            "collection": "rowland-store",
+            "collection": "battle-mountain-hs-volleyball-fan-store",
+            "image": "shopify:\/\/shop_images\/BattleMountainHS_Mascot.png",
             "image_alignment": "center center",
             "content_position": "bottomCenter",
             "subheading": "",
-            "title": "Rowland HS Fan Store",
+            "title": "Battle Mountain HS Fan Store",
             "button_text": "View products",
             "button_link": "shopify:\/\/collections\/rowland-store",
             "apply_overlay": true
@@ -225,6 +229,7 @@
     },
     "pagefly-home": {
       "type": "pagefly-home",
+      "disabled": true,
       "settings": {}
     }
   },

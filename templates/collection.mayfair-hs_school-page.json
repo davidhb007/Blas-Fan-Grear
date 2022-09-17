@@ -18,33 +18,7 @@
         "16587656926f3ad811-1": {
           "type": "collection",
           "settings": {
-            "collection": "morristown-hs-football-fan-store",
-            "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
-            "image_alignment": "center right",
-            "content_position": "bottomLeft",
-            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
-            "button_text": "Shop Team",
-            "button_link": "",
-            "apply_overlay": true
-          }
-        },
-        "4840b376-c267-4451-9429-ff6d82561246": {
-          "type": "collection",
-          "settings": {
-            "collection": "morristown-hs-boys-soccer-fan-store",
-            "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
-            "image_alignment": "center right",
-            "content_position": "bottomLeft",
-            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
-            "button_text": "Shop Team",
-            "button_link": "",
-            "apply_overlay": true
-          }
-        },
-        "ef06dfb6-c772-4bd3-8c75-b53000893512": {
-          "type": "collection",
-          "settings": {
-            "collection": "morristown-hs-girls-soccer-fan-store",
+            "collection": "mayfair-hs-girls-volleyball-fan-store",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -57,34 +31,7 @@
         "6cef8d22-ad37-4c82-ae52-c321fb943b5f": {
           "type": "collection",
           "settings": {
-            "collection": "morristown-hs-girls-lacrosse-fan-store",
-            "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
-            "image_alignment": "center right",
-            "content_position": "bottomLeft",
-            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
-            "button_text": "Shop Team",
-            "button_link": "",
-            "apply_overlay": true
-          }
-        },
-        "d7d297cb-51f7-4ff5-89fa-a7fd64232dd3": {
-          "type": "collection",
-          "settings": {
-            "collection": "morristown-cheer-fan-store",
-            "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
-            "image_alignment": "center right",
-            "content_position": "bottomLeft",
-            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
-            "button_text": "Shop Team",
-            "button_link": "",
-            "apply_overlay": true
-          }
-        },
-        "e17d0589-39d2-41ae-a096-439e250a2700": {
-          "type": "collection",
-          "disabled": true,
-          "settings": {
-            "collection": "morristown-cheer-fan-store",
+            "collection": "mayfair-hs-girls-tennis-fan-store",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -97,20 +44,7 @@
         "c899f53d-68fe-4973-85b0-4e0b5cdaa86a": {
           "type": "collection",
           "settings": {
-            "collection": "morristown-hs-girls-tennis-fan-store",
-            "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
-            "image_alignment": "center right",
-            "content_position": "bottomLeft",
-            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
-            "button_text": "Shop Team",
-            "button_link": "",
-            "apply_overlay": true
-          }
-        },
-        "fdbbc7e1-5b55-45f9-9a08-677930e436ad": {
-          "type": "collection",
-          "settings": {
-            "collection": "morristown-hs-girls-volleyball-fan-store",
+            "collection": "mayfair-hs-cross-country-fan-store",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -124,7 +58,7 @@
           "type": "collection",
           "disabled": true,
           "settings": {
-            "collection": "kealakehe-hs-cheer-fan-store",
+            "collection": "delta-charter-girls-soccer",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -138,7 +72,77 @@
           "type": "collection",
           "disabled": true,
           "settings": {
-            "collection": "kealakehe-hs-cross-country-fan-store",
+            "collection": "delta-charter-hs-girls-volleyball",
+            "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "4840b376-c267-4451-9429-ff6d82561246": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "delta-charter-girls-basketball",
+            "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "ef06dfb6-c772-4bd3-8c75-b53000893512": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "delta-charter-cross-country",
+            "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "e17d0589-39d2-41ae-a096-439e250a2700": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "delta-charter-boys-lacrosse",
+            "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "d7d297cb-51f7-4ff5-89fa-a7fd64232dd3": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "delta-charter-boys-water-polo",
+            "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "fdbbc7e1-5b55-45f9-9a08-677930e436ad": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "delta-charter-girls-lacrosse",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -249,15 +253,15 @@
       },
       "block_order": [
         "16587656926f3ad811-1",
-        "4840b376-c267-4451-9429-ff6d82561246",
-        "ef06dfb6-c772-4bd3-8c75-b53000893512",
         "6cef8d22-ad37-4c82-ae52-c321fb943b5f",
-        "d7d297cb-51f7-4ff5-89fa-a7fd64232dd3",
-        "e17d0589-39d2-41ae-a096-439e250a2700",
         "c899f53d-68fe-4973-85b0-4e0b5cdaa86a",
-        "fdbbc7e1-5b55-45f9-9a08-677930e436ad",
         "5a75b4c2-3158-4baa-8c3b-d33272a2740f",
         "0eff4155-cb78-474c-b3b7-d48784adc0cb",
+        "4840b376-c267-4451-9429-ff6d82561246",
+        "ef06dfb6-c772-4bd3-8c75-b53000893512",
+        "e17d0589-39d2-41ae-a096-439e250a2700",
+        "d7d297cb-51f7-4ff5-89fa-a7fd64232dd3",
+        "fdbbc7e1-5b55-45f9-9a08-677930e436ad",
         "df7f8794-4ba5-49c4-9cc5-095af25e1edb",
         "ace4faa7-3155-4071-a424-6013b5c075ef",
         "a24206b5-c8d3-4622-a8e7-5c05e5f285a4",
