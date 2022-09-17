@@ -491,6 +491,13 @@
     opacity: 0.4;
 }
 
+/* Social sharing buttons */
+@media only screen and (max-width: 1008px) {
+    #relydev-school-team-floating-share-buttons-container {
+        display: none;
+    }
+}
+
 @keyframes fadeContent {
     0% {
         opacity: 0;

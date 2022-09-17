@@ -325,13 +325,19 @@ it is a copy of the store page template with some added modifications
             {% endfor %}
           {% endif %}  
 
-			{% if collection.metafields.accentuate.team_store_title != blank %}
-            <div class="text_wrapper">
-              <h2 class="SectionHeader__Heading Heading u-h2">{{ collection.metafields.accentuate.team_store_title }}</h2>
-              <h4 class="mt-20" style="margin-bottom: 0px;font-weight: 600;">{{ collection.metafields.accentuate.team_store_subtitle }}</h4>
-              <div class="rte">{{ collection.metafields.accentuate.team_store_description }}</div>
-            </div>
-			{% endif %}
+          {% if collection.metafields.accentuate.team_store_title != blank %}
+                <div class="text_wrapper">
+                  <h2 class="SectionHeader__Heading Heading u-h2">{{ collection.metafields.accentuate.team_store_title }}</h2>
+                  <h4 class="mt-20" style="margin-bottom: 0px;font-weight: 600;">{{ collection.metafields.accentuate.team_store_subtitle }}</h4>
+                  <div class="rte">{{ collection.metafields.accentuate.team_store_description }}</div>
+                </div>
+          {% endif %}
+        </div>
+
+        {% comment %} Inline share button {% endcomment %}
+        <div id="relydev-school-team-inline-share-buttons-container">
+          {% comment %} <p class="share-this-page-text">Share School</p> {% endcomment %}
+          <div class="elfsight-sapp-b67f4f16-2f74-4f04-bac5-ac3565f721dc"></div>
         </div>
       </div>
       {% if collection.metafields.accentuate.header_background != blank and collection.metafields.accentuate.team_store_text_color != blank %}
@@ -421,6 +427,13 @@ it is a copy of the store page template with some added modifications
 
               {% comment %} Create the product content wrapper {% endcomment %}
               <div class="relydev-tab-content">
+
+                {% comment %} Floating Right Share Buttons {% endcomment %}
+                <div id="relydev-school-team-floating-share-buttons-container">
+                  {% comment %} <p class="share-this-page-text">Share School</p> {% endcomment %}
+                  <div class="elfsight-sapp-546584c3-9d9c-42a3-87cb-97402486a8b6"></div>
+                </div>
+
                 {%- for tab in tabs -%}
                   <div id="{{ tab | capitalize }}-contents" class="content-body {% if tab == tabs.first %}show-active{% endif %}">
 
