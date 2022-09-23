@@ -18,59 +18,7 @@
         "16587656926f3ad811-1": {
           "type": "collection",
           "settings": {
-            "collection": "turlock-christian-hs-girls-golf-fan-store",
-            "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
-            "image_alignment": "center right",
-            "content_position": "bottomLeft",
-            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
-            "button_text": "Shop Team",
-            "button_link": "",
-            "apply_overlay": true
-          }
-        },
-        "6cef8d22-ad37-4c82-ae52-c321fb943b5f": {
-          "type": "collection",
-          "settings": {
-            "collection": "turlock-chirsitan-hs-girls-tennis-fan-store",
-            "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
-            "image_alignment": "center right",
-            "content_position": "bottomLeft",
-            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
-            "button_text": "Shop Team",
-            "button_link": "",
-            "apply_overlay": true
-          }
-        },
-        "c899f53d-68fe-4973-85b0-4e0b5cdaa86a": {
-          "type": "collection",
-          "settings": {
-            "collection": "turlock-chirstian-hs-girls-volleyball-fan-store",
-            "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
-            "image_alignment": "center right",
-            "content_position": "bottomLeft",
-            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
-            "button_text": "Shop Team",
-            "button_link": "",
-            "apply_overlay": true
-          }
-        },
-        "5a75b4c2-3158-4baa-8c3b-d33272a2740f": {
-          "type": "collection",
-          "settings": {
-            "collection": "turlock-christian-hs-cheer-fan-store",
-            "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
-            "image_alignment": "center right",
-            "content_position": "bottomLeft",
-            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
-            "button_text": "Shop Team",
-            "button_link": "",
-            "apply_overlay": true
-          }
-        },
-        "0eff4155-cb78-474c-b3b7-d48784adc0cb": {
-          "type": "collection",
-          "settings": {
-            "collection": "turlock-christian-hs-cross-country-fan-store",
+            "collection": "virginia-hellcats-football-fan-store",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -82,8 +30,9 @@
         },
         "4840b376-c267-4451-9429-ff6d82561246": {
           "type": "collection",
+          "disabled": true,
           "settings": {
-            "collection": "turlock-chrisitan-hs-softball-fan-store",
+            "collection": "morristown-hs-boys-soccer-fan-store",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -95,8 +44,9 @@
         },
         "ef06dfb6-c772-4bd3-8c75-b53000893512": {
           "type": "collection",
+          "disabled": true,
           "settings": {
-            "collection": "turlock-christian-hs-baseball-fan-store",
+            "collection": "morristown-hs-girls-soccer-fan-store",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -106,10 +56,11 @@
             "apply_overlay": true
           }
         },
-        "e17d0589-39d2-41ae-a096-439e250a2700": {
+        "6cef8d22-ad37-4c82-ae52-c321fb943b5f": {
           "type": "collection",
+          "disabled": true,
           "settings": {
-            "collection": "turlock-christian-hs-basketball-fan-store",
+            "collection": "morristown-hs-girls-lacrosse-fan-store",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -121,8 +72,37 @@
         },
         "d7d297cb-51f7-4ff5-89fa-a7fd64232dd3": {
           "type": "collection",
+          "disabled": true,
           "settings": {
-            "collection": "turlock-christian-hs-soccer-fan-store",
+            "collection": "morristown-cheer-fan-store",
+            "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "e17d0589-39d2-41ae-a096-439e250a2700": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "morristown-cheer-fan-store",
+            "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "c899f53d-68fe-4973-85b0-4e0b5cdaa86a": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "morristown-hs-girls-tennis-fan-store",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -134,8 +114,37 @@
         },
         "fdbbc7e1-5b55-45f9-9a08-677930e436ad": {
           "type": "collection",
+          "disabled": true,
           "settings": {
-            "collection": "turlock-christian-hs-non-sport-fan-store",
+            "collection": "morristown-hs-girls-volleyball-fan-store",
+            "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "5a75b4c2-3158-4baa-8c3b-d33272a2740f": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "kealakehe-hs-cheer-fan-store",
+            "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
+            "image_alignment": "center right",
+            "content_position": "bottomLeft",
+            "title": "{{ block.settings.collection.metafields.custom.team_sport.value }}",
+            "button_text": "Shop Team",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "0eff4155-cb78-474c-b3b7-d48784adc0cb": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "kealakehe-hs-cross-country-fan-store",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -246,15 +255,15 @@
       },
       "block_order": [
         "16587656926f3ad811-1",
-        "6cef8d22-ad37-4c82-ae52-c321fb943b5f",
-        "c899f53d-68fe-4973-85b0-4e0b5cdaa86a",
-        "5a75b4c2-3158-4baa-8c3b-d33272a2740f",
-        "0eff4155-cb78-474c-b3b7-d48784adc0cb",
         "4840b376-c267-4451-9429-ff6d82561246",
         "ef06dfb6-c772-4bd3-8c75-b53000893512",
-        "e17d0589-39d2-41ae-a096-439e250a2700",
+        "6cef8d22-ad37-4c82-ae52-c321fb943b5f",
         "d7d297cb-51f7-4ff5-89fa-a7fd64232dd3",
+        "e17d0589-39d2-41ae-a096-439e250a2700",
+        "c899f53d-68fe-4973-85b0-4e0b5cdaa86a",
         "fdbbc7e1-5b55-45f9-9a08-677930e436ad",
+        "5a75b4c2-3158-4baa-8c3b-d33272a2740f",
+        "0eff4155-cb78-474c-b3b7-d48784adc0cb",
         "df7f8794-4ba5-49c4-9cc5-095af25e1edb",
         "ace4faa7-3155-4071-a424-6013b5c075ef",
         "a24206b5-c8d3-4622-a8e7-5c05e5f285a4",

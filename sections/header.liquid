@@ -349,6 +349,7 @@ HEADER CONTENT
               {%- endcapture -%}
 
               {%- if isMainPage == false and link.title contains "Create" -%}
+                {% comment %} Don't show "Create Store" on collection or product pages {% endcomment %}
                 {% continue %}
               {%- endif -%}
 

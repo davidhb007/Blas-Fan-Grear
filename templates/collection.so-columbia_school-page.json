@@ -18,7 +18,7 @@
         "16587656926f3ad811-1": {
           "type": "collection",
           "settings": {
-            "collection": "turlock-christian-hs-girls-golf-fan-store",
+            "collection": "southern-columbia-hs-football-fan-store",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -30,8 +30,9 @@
         },
         "6cef8d22-ad37-4c82-ae52-c321fb943b5f": {
           "type": "collection",
+          "disabled": true,
           "settings": {
-            "collection": "turlock-chirsitan-hs-girls-tennis-fan-store",
+            "collection": "delta-charter-boys-basketball",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -43,8 +44,9 @@
         },
         "c899f53d-68fe-4973-85b0-4e0b5cdaa86a": {
           "type": "collection",
+          "disabled": true,
           "settings": {
-            "collection": "turlock-chirstian-hs-girls-volleyball-fan-store",
+            "collection": "delta-charter-boys-soccer",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -56,8 +58,9 @@
         },
         "5a75b4c2-3158-4baa-8c3b-d33272a2740f": {
           "type": "collection",
+          "disabled": true,
           "settings": {
-            "collection": "turlock-christian-hs-cheer-fan-store",
+            "collection": "delta-charter-girls-soccer",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -69,8 +72,9 @@
         },
         "0eff4155-cb78-474c-b3b7-d48784adc0cb": {
           "type": "collection",
+          "disabled": true,
           "settings": {
-            "collection": "turlock-christian-hs-cross-country-fan-store",
+            "collection": "delta-charter-hs-girls-volleyball",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -82,8 +86,9 @@
         },
         "4840b376-c267-4451-9429-ff6d82561246": {
           "type": "collection",
+          "disabled": true,
           "settings": {
-            "collection": "turlock-chrisitan-hs-softball-fan-store",
+            "collection": "delta-charter-girls-basketball",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -95,8 +100,9 @@
         },
         "ef06dfb6-c772-4bd3-8c75-b53000893512": {
           "type": "collection",
+          "disabled": true,
           "settings": {
-            "collection": "turlock-christian-hs-baseball-fan-store",
+            "collection": "delta-charter-cross-country",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -108,8 +114,9 @@
         },
         "e17d0589-39d2-41ae-a096-439e250a2700": {
           "type": "collection",
+          "disabled": true,
           "settings": {
-            "collection": "turlock-christian-hs-basketball-fan-store",
+            "collection": "delta-charter-boys-lacrosse",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -121,8 +128,9 @@
         },
         "d7d297cb-51f7-4ff5-89fa-a7fd64232dd3": {
           "type": "collection",
+          "disabled": true,
           "settings": {
-            "collection": "turlock-christian-hs-soccer-fan-store",
+            "collection": "delta-charter-boys-water-polo",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -134,8 +142,9 @@
         },
         "fdbbc7e1-5b55-45f9-9a08-677930e436ad": {
           "type": "collection",
+          "disabled": true,
           "settings": {
-            "collection": "turlock-christian-hs-non-sport-fan-store",
+            "collection": "delta-charter-girls-lacrosse",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
