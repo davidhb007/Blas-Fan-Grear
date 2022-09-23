@@ -492,9 +492,212 @@
 }
 
 /* Social sharing buttons */
+span.shareLink-icon {
+    position: relative;
+}
+
+span.shareLink-icon:hover {
+    cursor: pointer;
+}
+
+span.shareLink-icon .tooltiptext {
+    visibility: hidden;
+    width: 100px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -50px;
+    font-size: 0.8rem;
+    display: none;
+    letter-spacing: 0.1rem;
+    line-height: 22px;
+    text-transform: none;
+}
+
+span.shareLink-icon:hover .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: -45%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+
+span.shareLink-icon:hover .tooltiptext {
+    visibility: visible;
+    display: block;
+    z-index: 3;
+}
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+#relydev-school-page-hero-share-buttons-container,
+#product-inline-share-buttons-container,
+#relydev-school-team-inline-share-buttons-container {
+    text-align: center;
+}
+
+div.relydev-share-button {
+    width: 200px;
+    padding: 4px 4px 4px 12px;
+    font-size: 1.5rem;
+    margin: 0 auto;
+    border: 1px solid #adadad;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 250ms;
+    -o-transition: all 250ms;
+    transition: all 250ms;
+    position: relative;
+    text-align: left;
+    z-index: 2;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+#relydev-school-page-hero-share-buttons-container
+    > div.relydev-share-button::before {
+    content: "Share School";
+}
+#relydev-school-team-inline-share-buttons-container
+    > div.relydev-share-button::before {
+    content: "Share Team";
+}
+#product-inline-share-buttons-container > div.relydev-share-button::before {
+    content: "Share Product";
+    margin-left: -5px;
+}
+
+div.relydev-share-button:hover {
+    cursor: pointer;
+}
+
+div.relydev-share-button.open {
+    -webkit-box-shadow: 3px 5px 10px rgba(42, 72, 112, 0.5);
+    box-shadow: 3px 5px 10px rgba(42, 72, 112, 0.5);
+    -webkit-transform: scale(1.05) translateY(-3px);
+    -ms-transform: scale(1.05) translateY(-3px);
+    transform: scale(1.05) translateY(-3px);
+    -webkit-transition: all 250ms;
+    -o-transition: all 250ms;
+    transition: all 250ms;
+}
+
+div.relydev-share-button > span {
+    position: absolute;
+    right: 4px;
+}
+
+div.relydev-share-button > span > svg {
+    width: 30px;
+    height: 27px;
+}
+
+div.relydev-share-button > span.shareNode-icon {
+    top: 9px;
+    opacity: 1;
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.5s;
+    transition: opacity 0.3s, -webkit-transform 0.5s;
+    -o-transition: transform 0.5s, opacity 0.3s;
+    transition: transform 0.5s, opacity 0.3s;
+    transition: transform 0.5s, opacity 0.3s, -webkit-transform 0.5s;
+    -webkit-transition: -webkit-transform 0.5s, opacity 0.3s;
+    -moz-transition: -moz-transform 0.5s, opacity 0.3s;
+}
+
+div.relydev-share-button:hover > span.shareNode-icon {
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+}
+
+div.social-list {
+    margin-top: 20px;
+    opacity: 1;
+    -webkit-transform: scale(1) translateY(0);
+    -ms-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+    -webkit-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    transition: all 0.8s;
+}
+
+div.social-list.hidden {
+    margin-top: -25px;
+    opacity: 0;
+    -webkit-transform: scale(0.8) translateY(-25px);
+    -ms-transform: scale(0.8) translateY(-25px);
+    transform: scale(0.8) translateY(-25px);
+    -webkit-transition: margin-top 0.6s, opacity 0.3s, -webkit-transform 0.6s;
+    transition: margin-top 0.6s, opacity 0.3s, -webkit-transform 0.6s;
+    -o-transition: margin-top 0.6s, opacity 0.3s, transform 0.6s;
+    transition: margin-top 0.6s, opacity 0.3s, transform 0.6s;
+    transition: margin-top 0.6s, opacity 0.3s, transform 0.6ss,
+        -webkit-transform 0.6s;
+}
+
+@media only screen and (max-width: 400px) {
+    #relydev-school-page-hero-share-buttons-container
+        > div.relydev-share-button::before {
+        content: "";
+    }
+    #relydev-school-team-inline-share-buttons-container
+        > div.relydev-share-button::before {
+        content: "";
+    }
+    #product-inline-share-buttons-container > div.relydev-share-button::before {
+        content: "";
+    }
+    div.relydev-share-button {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        padding: 0;
+    }
+    div.relydev-share-button > span {
+        right: 9px;
+    }
+    div.social-list.hidden {
+        -webkit-transform: scale(0.1);
+        -ms-transform: scale(0.1);
+        transform: scale(0.1);
+    }
+}
+
 @media only screen and (max-width: 1008px) {
     #relydev-school-team-floating-share-buttons-container {
         display: none;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    #product-inline-share-buttons-container {
+        display: none;
+    }
+}
+
+@-webkit-keyframes fadeContent {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
 

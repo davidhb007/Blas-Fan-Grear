@@ -283,7 +283,7 @@
         <div class="Container">
           {%- assign has_ouputted_variant_selector = false -%}          
           <script type="text/javascript" src="https://cdn.customily.com/customily.js"></script>
-		  <script type="text/javascript" src="https://cdn.customily.com/shopify/static/customily.shopify.script.unified.js"></script>
+		      <script type="text/javascript" src="https://cdn.customily.com/shopify/static/customily.shopify.script.unified.js"></script>
           {%- form 'product', product, class: 'ProductForm' -%}
             {%- render 'product-data', product: product -%}
 
@@ -292,6 +292,15 @@
 
                 {%- when 'product_meta' -%}
                   {%- render 'product-meta', form: form, block: block, product: product -%}
+                  {% comment %} Inline share button {% endcomment %}
+                  <div id="product-inline-share-buttons-container">
+                    <div class="relydev-share-button">
+                      <span class="shareNode-icon">{% render 'icon' with 'shareNode' %}</span>
+                    </div>
+                    <div class="social-list hidden">
+                      <div class="elfsight-sapp-b67f4f16-2f74-4f04-bac5-ac3565f721dc"></div>
+                    </div>
+                  </div>
 
                 {%- when '@app' -%}
                   {%- render block -%}
@@ -430,7 +439,6 @@
 
   {% comment %} Floating Right Share Buttons {% endcomment %}
   <div id="product-floating-share-buttons-container">
-    {% comment %} <p class="share-this-page-text">Share School</p> {% endcomment %}
     <div class="elfsight-sapp-546584c3-9d9c-42a3-87cb-97402486a8b6"></div>
   </div>
 </section>
@@ -471,6 +479,12 @@ This is the root container for the zoom functionality. Must not be removed, as o
 <script>
   window.ShopifyXR=window.ShopifyXR||function(){(ShopifyXR.q=ShopifyXR.q||[]).push(arguments)};
   ShopifyXR('addModels', {{ product.media | where: 'media_type', 'model' | json }});
+  let prodTitle = document.querySelector(".ProductMeta__Title.Heading.u-h2");
+  let shareLink = document.createElement('span');
+  shareLink.className = "shareLink-icon";
+  shareLink.setAttribute('data-url', "{{ canonical_url }}")
+  shareLink.innerHTML = `{% render 'icon' with 'shareLink' %} <span class="tooltiptext">Copy Link</span>`;
+  prodTitle.append(shareLink);
 </script>
 
 {% schema %}

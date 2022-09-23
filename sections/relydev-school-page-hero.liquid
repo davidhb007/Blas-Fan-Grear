@@ -9,7 +9,11 @@
               {%- endif -%}
   
               {%- if section.settings.title != blank -%}
-                <h2 class="SectionHeader__Heading Heading u-h1">{{ section.settings.title | escape }}</h2>
+                <h2 class="SectionHeader__Heading Heading u-h1">
+                  {{ section.settings.title | escape }}
+                  {%- assign share_url = canonical_url -%}
+                  <span class="shareLink-icon" data-url="{{ share_url }}">{% render 'icon' with 'shareLink' %} <span class="tooltiptext">Copy Link</span></span>
+                </h2>
               {%- endif -%}
   
               {%- if section.settings.content != blank -%}
@@ -53,10 +57,14 @@
       {%- endif -%}
     </div>
 
-
+    {% comment %} Inline share button {% endcomment %}
     <div id="relydev-school-page-hero-share-buttons-container">
-      {% comment %} <p class="share-this-page-text">Share School</p> {% endcomment %}
-      <div class="elfsight-sapp-b67f4f16-2f74-4f04-bac5-ac3565f721dc"></div>
+      <div class="relydev-share-button">
+        <span class="shareNode-icon">{% render 'icon' with 'shareNode' %}</span>
+      </div>
+      <div class="social-list hidden">
+        <div class="elfsight-sapp-b67f4f16-2f74-4f04-bac5-ac3565f721dc"></div>
+      </div>
     </div>
 </section>
 

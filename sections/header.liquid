@@ -25,6 +25,16 @@ USEFUL VARIABLES
   {%- assign use_sidebar_menu = true -%}
 {%- endif -%}
 
+{% comment %} 
+-------------------------------------------------------------------------------------------------------------------
+DISABLE THE 'CREATE STORE' OPTION FROM THE HEADER IF NOT IN ONE OF THE MAIN PAGES
+-------------------------------------------------------------------------------------------------------------------
+{% endcomment %}
+{%- assign isMainPage = false -%}
+{%- if template == 'index' or template.name == 'page' -%}
+  {%- assign isMainPage = true -%}  
+{%- endif -%}
+
 {%- comment -%}
 --------------------------------------------------------------------------------------------------------------------
 CURRENCY AND LANGUAGE SELECTORS
@@ -337,6 +347,10 @@ HEADER CONTENT
                   </div>
                 {%- endif -%}
               {%- endcapture -%}
+
+              {%- if isMainPage == false and link.title contains "Create" -%}
+                {% continue %}
+              {%- endif -%}
 
               <li class="HorizontalList__Item {% if link.links == blank and link.active %}is-active{% endif %} {% if menu_item_dropdown != blank %}has-dropdown{% endif %}" {% if menu_item_dropdown != blank %}aria-haspopup="true"{% endif %}>
                 <a href="{{ link.url }}" class="Heading u-h6">

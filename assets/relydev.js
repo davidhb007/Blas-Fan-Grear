@@ -33,31 +33,36 @@ for (var tab of tabs) {
 
 // The following takes care of the sroll to top functionality
 let relydevBackToTopBtn = document.getElementById("relydev-back-top-top-btn");
-relydevBackToTopBtn.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-});
+if (relydevBackToTopBtn) {
+    relydevBackToTopBtn.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 
-window.onscroll = function () {
-    topBtnToggle();
-};
+    window.onscroll = function () {
+        topBtnToggle();
+    };
 
-function topBtnToggle() {
-    if (
-        document.body.scrollTop > 150 ||
-        document.documentElement.scrollTop > 600
-    ) {
-        relydevBackToTopBtn.style.display = "block";
-    } else {
-        relydevBackToTopBtn.style.display = "none";
+    function topBtnToggle() {
+        if (
+            document.body.scrollTop > 150 ||
+            document.documentElement.scrollTop > 600
+        ) {
+            relydevBackToTopBtn.style.display = "block";
+        } else {
+            relydevBackToTopBtn.style.display = "none";
+        }
     }
 }
 
 //RelyDev method to make Blog Categories Buttons Scrollable with mouse and touch
 const leftArrow = document.querySelector("#relydev-left-arrow");
 const rightArrow = document.querySelector("#relydev-right-arrow");
-const slider = document.querySelector(".tab-selector");
 
 function makeScrollableButtons(x) {
+    const slider = document.querySelector(".tab-selector");
+    if (!slider) {
+        return;
+    }
     if (x.matches) {
         const itsLinks = document.querySelectorAll(".tab");
         let isDown = false;
@@ -150,30 +155,38 @@ function makeScrollableButtons(x) {
 }
 
 //Functionality for tab slider Arrows
-leftArrow.addEventListener("click", (e) => {
-    // Left Arrow scroll left on click
-    let scrollDistance = slider.firstChild.clientWidth * 3;
-    slider.scrollBy({
-        top: 0,
-        left: -scrollDistance,
-        behavior: "smooth",
+if (leftArrow) {
+    const slider = document.querySelector(".tab-selector");
+    leftArrow.addEventListener("click", (e) => {
+        // Left Arrow scroll left on click
+        let scrollDistance = slider.firstChild.clientWidth * 3;
+        slider.scrollBy({
+            top: 0,
+            left: -scrollDistance,
+            behavior: "smooth",
+        });
     });
-});
+}
 
-rightArrow.addEventListener("click", (e) => {
-    // Right Arrow scroll right on click
-    let scrollDistance = slider.firstChild.clientWidth * 3;
-    slider.scrollBy({
-        top: 0,
-        left: scrollDistance,
-        behavior: "smooth",
+if (rightArrow) {
+    const slider = document.querySelector(".tab-selector");
+    rightArrow.addEventListener("click", (e) => {
+        // Right Arrow scroll right on click
+        let scrollDistance = slider.firstChild.clientWidth * 3;
+        slider.scrollBy({
+            top: 0,
+            left: scrollDistance,
+            behavior: "smooth",
+        });
     });
-});
-
-const tabSelector = document.querySelector(".tab-selector");
-const firstTab = document.querySelector(".tab-selector").firstElementChild;
-const lastTab = document.querySelector(".tab-selector").lastElementChild;
+}
 function sliderInnerShadow() {
+    const tabSelector = document.querySelector(".tab-selector");
+    if (!tabSelector || !leftArrow || !rightArrow) {
+        return;
+    }
+    const firstTab = document.querySelector(".tab-selector").firstElementChild;
+    const lastTab = document.querySelector(".tab-selector").lastElementChild;
     let initialPosition =
         Math.floor(tabSelector.getBoundingClientRect().left) <=
         Math.floor(firstTab.getBoundingClientRect().left);
@@ -212,3 +225,92 @@ let w = window.matchMedia("(min-width: 0px)");
 makeScrollableButtons(w);
 sliderInnerShadow();
 w.addEventListener("change", makeScrollableButtons);
+
+function shareLinkIconSizer() {
+    let shareLinkIcons = document.querySelectorAll(".shareLink-icon");
+    if (!shareLinkIcons) {
+        return;
+    }
+    shareLinkIcons.forEach((icon) => {
+        let parentElSize = window
+            .getComputedStyle(icon.parentElement)
+            .getPropertyValue("font-size");
+        icon.style.verticalAlign = "top";
+        icon.firstElementChild.style.height = parentElSize;
+        icon.firstElementChild.style.maxHeight = "3rem";
+    });
+}
+
+function copyLink() {
+    let shareLinkIcons = document.querySelectorAll(".shareLink-icon");
+    if (!shareLinkIcons) {
+        return;
+    }
+    shareLinkIcons.forEach((icon) => {
+        $(icon).click(() => {
+            let tooltip = $(icon).find("span");
+            let shareUrl = icon.dataset.url;
+            navigator.clipboard.writeText(shareUrl);
+            tooltip.css({
+                width: "180px",
+                "margin-left": "-90px",
+            });
+            tooltip.text("Copied to Clipboard");
+
+            icon.addEventListener("mouseleave", () => {
+                tooltip.css({
+                    width: "100px",
+                    "margin-left": "-50px",
+                });
+                tooltip.text("Copy Link");
+            });
+        });
+    });
+}
+
+var css = "background-color: purple; font-size: 16px"; //For debugging -> delete later
+
+function displaySocialButtons() {
+    let isOpen = false;
+    $(this).toggleClass("open");
+    let socialList = $(".social-list");
+    socialList.toggleClass("hidden");
+
+    $(
+        "#eapps-social-share-buttons-1 .eapps-social-share-buttons-item-more"
+    ).click(() => {
+        let allSocials = $("#eapps-social-share-buttons-1").detach();
+        allSocials.appendTo("body");
+        isOpen = true;
+    });
+    $("#eapps-social-share-buttons-1 .eapps-social-share-buttons-item")
+        .not(".eapps-social-share-buttons-item-more")
+        .click(() => {
+            let allSocials = $("#eapps-social-share-buttons-1").detach();
+            allSocials.appendTo($(socialList));
+            socialList.addClass("hidden");
+            $(this).removeClass("open");
+        });
+    $(
+        "#eapps-social-share-buttons-1 .eapps-social-share-buttons-all-items"
+    ).click(() => {
+        let allSocials = $("#eapps-social-share-buttons-1").detach();
+        allSocials.appendTo($(socialList));
+        socialList.addClass("hidden");
+        $(this).removeClass("open");
+    });
+    $(
+        "#eapps-social-share-buttons-1 .eapps-social-share-buttons-all-controls"
+    ).click(() => {
+        let allSocials = $("#eapps-social-share-buttons-1").detach();
+        allSocials.appendTo($(socialList));
+        socialList.addClass("hidden");
+        $(this).removeClass("open");
+    });
+}
+
+$(".relydev-share-button").click(displaySocialButtons);
+
+document.addEventListener("DOMContentLoaded", shareLinkIconSizer);
+document.addEventListener("DOMContentLoaded", copyLink);
+window.addEventListener("resize", shareLinkIconSizer);

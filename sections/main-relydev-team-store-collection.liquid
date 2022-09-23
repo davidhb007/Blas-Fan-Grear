@@ -327,7 +327,11 @@ it is a copy of the store page template with some added modifications
 
           {% if collection.metafields.accentuate.team_store_title != blank %}
                 <div class="text_wrapper">
-                  <h2 class="SectionHeader__Heading Heading u-h2">{{ collection.metafields.accentuate.team_store_title }}</h2>
+                  <h2 class="SectionHeader__Heading Heading u-h2">
+                    {{ collection.metafields.accentuate.team_store_title }}
+                    {%- assign share_url = canonical_url -%}
+                    <span class="shareLink-icon" data-url="{{ share_url }}">{% render 'icon' with 'shareLink' %} <span class="tooltiptext">Copy Link</span></span>
+                  </h2>
                   <h4 class="mt-20" style="margin-bottom: 0px;font-weight: 600;">{{ collection.metafields.accentuate.team_store_subtitle }}</h4>
                   <div class="rte">{{ collection.metafields.accentuate.team_store_description }}</div>
                 </div>
@@ -336,10 +340,16 @@ it is a copy of the store page template with some added modifications
 
         {% comment %} Inline share button {% endcomment %}
         <div id="relydev-school-team-inline-share-buttons-container">
-          {% comment %} <p class="share-this-page-text">Share School</p> {% endcomment %}
-          <div class="elfsight-sapp-b67f4f16-2f74-4f04-bac5-ac3565f721dc"></div>
+          <div class="relydev-share-button">
+            <span class="shareNode-icon">{% render 'icon' with 'shareNode' %}</span>
+          </div>
+          <div class="social-list hidden">
+            <div class="elfsight-sapp-b67f4f16-2f74-4f04-bac5-ac3565f721dc"></div>
+          </div>
         </div>
+
       </div>
+
       {% if collection.metafields.accentuate.header_background != blank and collection.metafields.accentuate.team_store_text_color != blank %}
         {% style %}
           .collection-top-banner-inner{
@@ -374,7 +384,11 @@ it is a copy of the store page template with some added modifications
                   
                     
                       <div class="text_wrapper">
-                        <h2 class="SectionHeader__Heading Heading u-h2">{{ collection.metafields.accentuate.team_store_title }}</h2>
+                        <h2 class="SectionHeader__Heading Heading u-h2">
+                          {{ collection.metafields.accentuate.team_store_title }}
+                          {%- assign share_url = canonical_url -%}
+                          <span class="shareLink-icon" data-url="{{ share_url }}">{% render 'icon' with 'shareLink' %} <span class="tooltiptext">Copy Link</span></span>
+                        </h2>
                         <h4 class="mt-20" style="margin-bottom: 0px;font-weight: 600;">{{ collection.metafields.accentuate.team_store_subtitle }}</h4>
                         <div class="rte">{{ collection.metafields.accentuate.team_store_description }}</div>
                       </div>
