@@ -18,7 +18,7 @@
         "16587656926f3ad811-1": {
           "type": "collection",
           "settings": {
-            "collection": "newbury-hs-football",
+            "collection": "godinez-fundamental-hs-boys-basketball",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -30,9 +30,8 @@
         },
         "6cef8d22-ad37-4c82-ae52-c321fb943b5f": {
           "type": "collection",
-          "disabled": true,
           "settings": {
-            "collection": "delta-charter-boys-basketball",
+            "collection": "godinez-fundamental-hs-girls-basketball-fan-store",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -44,9 +43,8 @@
         },
         "c899f53d-68fe-4973-85b0-4e0b5cdaa86a": {
           "type": "collection",
-          "disabled": true,
           "settings": {
-            "collection": "delta-charter-boys-soccer",
+            "collection": "godinez-fundamental-hs-girls-volleyball-fan-store",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",

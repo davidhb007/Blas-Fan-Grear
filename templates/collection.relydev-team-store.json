@@ -1,5 +1,37 @@
 {
   "sections": {
+    "1664226774c72c465f": {
+      "type": "slideshow",
+      "blocks": {
+        "16642267741a64054a-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled-8.png",
+            "mobile_image": "shopify:\/\/shop_images\/Untitled-9.png",
+            "apply_overlay": true,
+            "content_position": "bottomLeft",
+            "subheading": "",
+            "title": "",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "16642267741a64054a-0"
+      ],
+      "settings": {
+        "show_fullscreen": false,
+        "show_arrow": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#ffffff"
+      }
+    },
     "main": {
       "type": "main-relydev-team-store-collection",
       "settings": {
@@ -46,6 +78,7 @@
     }
   },
   "order": [
+    "1664226774c72c465f",
     "main",
     "team-store-collection-video"
   ]

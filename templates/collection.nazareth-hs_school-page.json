@@ -18,7 +18,7 @@
         "16587656926f3ad811-1": {
           "type": "collection",
           "settings": {
-            "collection": "newbury-hs-football",
+            "collection": "nazareth-hs-football-fan-store",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -30,9 +30,8 @@
         },
         "6cef8d22-ad37-4c82-ae52-c321fb943b5f": {
           "type": "collection",
-          "disabled": true,
           "settings": {
-            "collection": "delta-charter-boys-basketball",
+            "collection": "nazareth-hs-girls-soccer-fan-store",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",

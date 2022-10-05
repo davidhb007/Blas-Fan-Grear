@@ -134,8 +134,9 @@
         },
         "fdbbc7e1-5b55-45f9-9a08-677930e436ad": {
           "type": "collection",
+          "disabled": true,
           "settings": {
-            "collection": "turlock-christian-hs-non-sport-fan-store",
+            "collection": "delta-charter-girls-lacrosse",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",

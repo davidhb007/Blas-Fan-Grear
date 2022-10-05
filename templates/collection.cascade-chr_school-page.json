@@ -18,7 +18,7 @@
         "16587656926f3ad811-1": {
           "type": "collection",
           "settings": {
-            "collection": "newbury-hs-football",
+            "collection": "cascade-christian-hs-girls-soccer-fan-store",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",

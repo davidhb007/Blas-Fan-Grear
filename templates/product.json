@@ -26,6 +26,7 @@
         },
         "share_buttons": {
           "type": "share_buttons",
+          "disabled": true,
           "settings": {}
         },
         "buy_buttons": {
