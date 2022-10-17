@@ -102,7 +102,7 @@
   {%- endif -%}
 
   {%- assign hideHeader = false -%}
-  {%- if template.suffix contains "relydev-team-store" -%}
+  {%- if template.suffix contains "relydev-team-store" or template.suffix contains "school-page" or template == 'product' -%}
     {%- assign hideHeader = true -%}
   {%- endif -%}
 
@@ -123,11 +123,12 @@
     {%- endif -%}
 
     <div class="PageContainer">
-      {% comment %} {% section 'announcement' %} {% endcomment %}
       {%- unless hideHeader -%}
-        {% section 'top-promobar' %}
+        {% section 'announcement' %}
+        {% comment %} {% section 'top-promobar' %} {% endcomment %}
         {% section 'header' %}
       {%- endunless -%}
+
       <main id="main" role="main">
         {{ content_for_layout }} 
       </main>

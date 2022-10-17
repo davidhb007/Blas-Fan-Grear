@@ -39,12 +39,68 @@ it is a copy of the store page template with some added modifications
 }
 {%- endcapture -%}
 
+{%- assign splitter = '' -%}
+{% comment %} Get and parse the name of the school the current collection belongs to {% endcomment %}
+{%- assign schoolName = collection.metafields.custom.school_name -%}
+{% comment %} Get and parse the url of the school the current collection belongs to {% endcomment %}
+{%- assign schoolPageHandle = schoolName | handleize -%}
+{%- assign schoolCollection = collections[schoolPageHandle] -%}
+
+{%- if schoolName contains 'HS' or schoolName contains 'College' or schoolName contains 'University' -%}
+  {%- assign schoolNameWords = schoolName | split: ' ' -%}
+  {%- capture schoolNameParsed -%}
+    {%- for word in schoolNameWords -%}
+      {%- if word == "HS" -%}
+        {%- assign splitter = 'HS' -%}
+        {{ word | upcase}}
+        {% break %}
+      {%- elsif word == 'University' -%}
+        {%- assign splitter = 'University' -%}
+        {{ word | capitalize }}
+        {% break %}
+      {%- elsif word == 'College' -%}
+        {%- assign splitter = 'College' -%}
+        {{ word | capitalize }}
+        {% break %}
+      {%- else -%}
+        {{ word | capitalize}}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+  {%- assign schoolName = schoolNameParsed -%}
+{%- elsif schoolName contains 'Fan' -%}
+  {%- assign schoolName = schoolName | split: " Fan" | first -%}
+{%- endif -%}
+{% comment %} Done Parsing the School Name {% endcomment %}
+
+{% comment %} Parse the name of the current sport team name {% endcomment %}
+{%- assign splitter = splitter | downcase -%}
+{%- capture currentPage -%}
+  {%- assign currentPageWords = '' -%}
+  {%- if splitter != '' -%}
+    {%- assign currentPageWords = handle | replace: "-", " " | split: splitter | last | split: ' ' -%}
+  {%- else -%}
+    {%- assign currentPageWords = handle | replace: "-", " " | split: ' ' -%}
+  {%- endif -%}
+  {%- for word in currentPageWords -%}
+    {{ word | capitalize }}
+  {%- endfor -%}
+{%- endcapture -%}
+
 <section data-section-id="{{ section.id }}" data-section-type="collection" data-section-settings='{{ section_settings }}'>
   {%- comment -%}
   --------------------------------------------------------------------------------------------------------------------
   COLLECTION INFO
   --------------------------------------------------------------------------------------------------------------------
   {%- endcomment -%}
+
+  <div class="relydev-breadcrumbs">
+    <a href="{{ shop.url | append: schoolCollection.url }}" class="relydev-breadcrumb-link"> {{ schoolName }} </a>
+    <div class="slash">/</div>
+    <div class="current-page">
+      {{ currentPage }}
+    </div>
+  </div>
 
   {%- if collection.all_products_count > 0 -%}
     {%- if section.settings.show_collection_image and collection.image and collection.template_suffix != 'no-image' -%}
@@ -58,6 +114,8 @@ it is a copy of the store page template with some added modifications
           <noscript>
             <div class="PageHeader__ImageWrapper {% if section.settings.apply_overlay %}Image--contrast{% endif %}" style="background-image: url({{ collection.image | img_url: '800x' }})"></div>
           </noscript>
+
+          
 
           {%- if section.settings.show_collection_info -%}
             <div class="Container">

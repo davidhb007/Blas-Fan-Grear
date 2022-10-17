@@ -20,6 +20,71 @@
 }
 {%- endcapture -%}
 
+{% comment %} RELYDEV Liquid code to parse and display breadcrumbs {% endcomment %}
+{%- assign splitter = '' -%}
+{% comment %} Get the name and the url of the school the current collection belongs to {% endcomment %}
+{%- for collection in product.collections -%}
+  {%- if collection.metafields.custom.school_name -%}
+    {%- assign teamCollection = collection -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign schoolName = teamCollection.metafields.custom.school_name -%}
+{%- assign schoolPageHandle = schoolName | handleize -%}
+{%- assign schoolCollection = collections[schoolPageHandle] -%}
+
+{% comment %} Parse the School Name {% endcomment %}
+{%- if schoolName contains 'HS' or schoolName contains 'College' or schoolName contains 'University' -%}
+  {%- assign schoolNameWords = schoolName | split: ' ' -%}
+  {%- capture schoolNameParsed -%}
+    {%- for word in schoolNameWords -%}
+      {%- if word == "HS" -%}
+        {%- assign splitter = 'HS' -%}
+        {{ word | upcase}}
+        {% break %}
+      {%- elsif word == 'University' -%}
+        {%- assign splitter = 'University' -%}
+        {{ word | capitalize }}
+        {% break %}
+      {%- elsif word == 'College' -%}
+        {%- assign splitter = 'College' -%}
+        {{ word | capitalize }}
+        {% break %}
+      {%- else -%}
+        {{ word | capitalize}}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+  {%- assign schoolName = schoolNameParsed -%}
+{%- elsif schoolName contains 'Fan' -%}
+  {%- assign schoolName = schoolName | split: " Fan" | first -%}
+{%- endif -%}
+{% comment %} Done Parsing the School Name {% endcomment %}
+
+{% comment %} Get and Parse name of Sport Team Collection the product belongs to {% endcomment %}
+{%- assign splitter = splitter | downcase -%}
+{%- assign teamLink = teamCollection.url -%}
+{%- capture teamName -%}
+  {%- assign teamNameWords = '' -%}
+  {%- if splitter != '' -%}
+    {%- assign teamNameWords = teamCollection.handle | replace: "-", " " | split: splitter | last | split: ' ' -%}
+  {%- else -%}
+    {%- assign teamNameWords = teamCollection.handle | replace: "-", " " | split: " " -%}
+  {%- endif -%}
+  {%- for word in teamNameWords -%}
+    {{ word | capitalize }}
+  {%- endfor -%}
+{%- endcapture -%}
+{% comment %} Done Parsign the Team Sport Collection name {% endcomment %}
+
+{% comment %} Parse the product name to show in th breadcrumbs {% endcomment %}
+{%- assign productNameWords = product.title | replace_first: '-', '~~' | split: "~~" | last | split: ' ' -%}
+{%- capture currentPage -%}
+  {%- for word in productNameWords -%}
+    {{ word | capitalize }}
+  {%- endfor -%}
+{%- endcapture -%}
+{% comment %} END OF RELYDEV Liquid code to parse and display breadcrumbs {% endcomment %}
+
 <script>
   // To power the recently viewed products section, we save the ID of the product inside the local storage
   (() => {
@@ -40,6 +105,17 @@
 </script>
 
 <section class="Product Product--{{ section.settings.image_size }}" data-section-id="{{ section.id }}" data-section-type="product" data-section-settings='{{ section_settings }}'>
+
+  <div class="relydev-breadcrumbs">
+    <a href="{{ shop.url | append: schoolCollection.url }}" class="relydev-breadcrumb-link">{{ schoolName }}</a>
+    <div class="slash">/</div>
+    <a href="{{ teamLink }}" class="relydev-breadcrumb-link">{{ teamName }}</a>
+    <div class="slash">/</div>
+    <div class="current-page">
+      {{ currentPage }}
+    </div>
+  </div>
+
   <div class="Product__Wrapper">
     {%- capture action_list_items -%}
       {%- if section.settings.enable_image_zoom -%}
