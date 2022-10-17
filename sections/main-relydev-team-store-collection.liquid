@@ -39,6 +39,7 @@ it is a copy of the store page template with some added modifications
 }
 {%- endcapture -%}
 
+{% comment %} RELYDEV Liquid code to parse and display breadcrumbs {% endcomment %}
 {%- assign splitter = '' -%}
 {% comment %} Get and parse the name of the school the current collection belongs to {% endcomment %}
 {%- assign schoolName = collection.metafields.custom.school_name -%}
@@ -46,7 +47,11 @@ it is a copy of the store page template with some added modifications
 {%- assign schoolPageHandle = schoolName | handleize -%}
 {%- assign schoolCollection = collections[schoolPageHandle] -%}
 
-{%- if schoolName contains 'HS' or schoolName contains 'College' or schoolName contains 'University' -%}
+{%- assign schoolName = schoolName | split: ' Fan' | first -%}
+
+{%- assign teamName = collection.title | remove: schoolName | split: ' Fan' | first -%}
+
+{% comment %} {%- if schoolName contains 'HS' or schoolName contains 'College' or schoolName contains 'University' -%}
   {%- assign schoolNameWords = schoolName | split: ' ' -%}
   {%- capture schoolNameParsed -%}
     {%- for word in schoolNameWords -%}
@@ -70,11 +75,12 @@ it is a copy of the store page template with some added modifications
   {%- assign schoolName = schoolNameParsed -%}
 {%- elsif schoolName contains 'Fan' -%}
   {%- assign schoolName = schoolName | split: " Fan" | first -%}
-{%- endif -%}
+{%- endif -%} {% endcomment %}
 {% comment %} Done Parsing the School Name {% endcomment %}
 
 {% comment %} Parse the name of the current sport team name {% endcomment %}
-{%- assign splitter = splitter | downcase -%}
+
+{% comment %} {%- assign splitter = splitter | downcase -%}
 {%- capture currentPage -%}
   {%- assign currentPageWords = '' -%}
   {%- if splitter != '' -%}
@@ -85,7 +91,9 @@ it is a copy of the store page template with some added modifications
   {%- for word in currentPageWords -%}
     {{ word | capitalize }}
   {%- endfor -%}
-{%- endcapture -%}
+{%- endcapture -%} {% endcomment %}
+
+{% comment %} END OF RELYDEV Liquid code to parse and display breadcrumbs {% endcomment %}
 
 <section data-section-id="{{ section.id }}" data-section-type="collection" data-section-settings='{{ section_settings }}'>
   {%- comment -%}
@@ -94,11 +102,19 @@ it is a copy of the store page template with some added modifications
   --------------------------------------------------------------------------------------------------------------------
   {%- endcomment -%}
 
+  <div class="relydev-floating-cart">
+    <a href="{{ routes.cart_url }}" data-action="open-drawer" data-drawer-id="sidebar-cart" aria-expanded="false" aria-label="Open Cart">
+      <span class="hidden-tablet-and-up">{%- render 'icon' with 'cart' -%}</span>
+      <span class="hidden-phone">{%- render 'icon' with 'cart' -%}</span>
+      <span class="Header__CartDot {% if cart.item_count > 0 %}is-visible{% endif %}"></span>
+    </a>
+  </div>
+
   <div class="relydev-breadcrumbs">
     <a href="{{ shop.url | append: schoolCollection.url }}" class="relydev-breadcrumb-link"> {{ schoolName }} </a>
     <div class="slash">/</div>
     <div class="current-page">
-      {{ currentPage }}
+      {{ teamName }}
     </div>
   </div>
 
@@ -114,8 +130,6 @@ it is a copy of the store page template with some added modifications
           <noscript>
             <div class="PageHeader__ImageWrapper {% if section.settings.apply_overlay %}Image--contrast{% endif %}" style="background-image: url({{ collection.image | img_url: '800x' }})"></div>
           </noscript>
-
-          
 
           {%- if section.settings.show_collection_info -%}
             <div class="Container">

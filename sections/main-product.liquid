@@ -32,8 +32,21 @@
 {%- assign schoolPageHandle = schoolName | handleize -%}
 {%- assign schoolCollection = collections[schoolPageHandle] -%}
 
+{%- assign schoolName = schoolName | split: ' Fan' | first -%}
+
+{%- assign teamName = teamCollection.title | remove: schoolName | split: ' Fan' | first -%}
+{%- assign teamLink = teamCollection.url -%}
+
+{% comment %} Parse the product name to show in th breadcrumbs {% endcomment %}
+{%- assign productNameWords = product.title | replace_first: '-', '~~' | split: "~~" | last | split: ' ' -%}
+{%- capture currentPage -%}
+  {%- for word in productNameWords -%}
+    {{ word | capitalize }}
+  {%- endfor -%}
+{%- endcapture -%}
+
 {% comment %} Parse the School Name {% endcomment %}
-{%- if schoolName contains 'HS' or schoolName contains 'College' or schoolName contains 'University' -%}
+{% comment %} {%- if schoolName contains 'HS' or schoolName contains 'College' or schoolName contains 'University' -%}
   {%- assign schoolNameWords = schoolName | split: ' ' -%}
   {%- capture schoolNameParsed -%}
     {%- for word in schoolNameWords -%}
@@ -57,11 +70,11 @@
   {%- assign schoolName = schoolNameParsed -%}
 {%- elsif schoolName contains 'Fan' -%}
   {%- assign schoolName = schoolName | split: " Fan" | first -%}
-{%- endif -%}
+{%- endif -%} {% endcomment %}
 {% comment %} Done Parsing the School Name {% endcomment %}
 
 {% comment %} Get and Parse name of Sport Team Collection the product belongs to {% endcomment %}
-{%- assign splitter = splitter | downcase -%}
+{% comment %} {%- assign splitter = splitter | downcase -%}
 {%- assign teamLink = teamCollection.url -%}
 {%- capture teamName -%}
   {%- assign teamNameWords = '' -%}
@@ -75,14 +88,7 @@
   {%- endfor -%}
 {%- endcapture -%}
 {% comment %} Done Parsign the Team Sport Collection name {% endcomment %}
-
-{% comment %} Parse the product name to show in th breadcrumbs {% endcomment %}
-{%- assign productNameWords = product.title | replace_first: '-', '~~' | split: "~~" | last | split: ' ' -%}
-{%- capture currentPage -%}
-  {%- for word in productNameWords -%}
-    {{ word | capitalize }}
-  {%- endfor -%}
-{%- endcapture -%}
+{% endcomment %}
 {% comment %} END OF RELYDEV Liquid code to parse and display breadcrumbs {% endcomment %}
 
 <script>
@@ -106,6 +112,14 @@
 
 <section class="Product Product--{{ section.settings.image_size }}" data-section-id="{{ section.id }}" data-section-type="product" data-section-settings='{{ section_settings }}'>
 
+  <div class="relydev-floating-cart">
+    <a href="{{ routes.cart_url }}" data-action="open-drawer" data-drawer-id="sidebar-cart" aria-expanded="false" aria-label="Open Cart">
+      <span class="hidden-tablet-and-up">{%- render 'icon' with 'cart' -%}</span>
+      <span class="hidden-phone">{%- render 'icon' with 'cart' -%}</span>
+      <span class="Header__CartDot {% if cart.item_count > 0 %}is-visible{% endif %}"></span>
+    </a>
+  </div>
+  
   <div class="relydev-breadcrumbs">
     <a href="{{ shop.url | append: schoolCollection.url }}" class="relydev-breadcrumb-link">{{ schoolName }}</a>
     <div class="slash">/</div>

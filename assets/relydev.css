@@ -678,6 +678,46 @@ div.social-list.hidden {
     text-decoration: underline;
 }
 
+/* FLOATING CART */
+.relydev-floating-cart {
+    position: relative;
+    float: right;
+    right: 20px;
+    top: -15px;
+}
+
+.relydev-floating-cart a {
+    font-size: 30px;
+    font-weight: 100;
+    position: relative;
+}
+
+.relydev-floating-cart a .Header__CartDot {
+    width: 6px;
+    height: 6px;
+    top: 5px;
+}
+
+#relydev-back-top-top-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 99;
+    font-size: 18px;
+    font-weight: bolder;
+    border: none;
+    outline: none;
+    background-color: rgba(200, 200, 200, 0.8);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 100%;
+    transition: background-color 0.8s;
+    -webkit-transition: background-color 0.8s;
+}
+
 @media only screen and (max-width: 400px) {
     #relydev-school-page-hero-share-buttons-container
         > div.relydev-share-button::before {
@@ -725,6 +765,9 @@ div.social-list.hidden {
 @media only screen and (min-width: 769px) {
     #product-inline-share-buttons-container {
         display: none;
+    }
+    .relydev-floating-cart {
+        right: 50px;
     }
 }
 
