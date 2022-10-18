@@ -18,7 +18,7 @@
         "9b58849e-357a-49b6-aa35-0e8520a3507f": {
           "type": "collection",
           "settings": {
-            "collection": "bear-creek-little-league-fan-store-1",
+            "collection": "bear-creek-little-league-fan-store",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",

@@ -18,7 +18,7 @@
         "16587656926f3ad811-1": {
           "type": "collection",
           "settings": {
-            "collection": "burnt-hills-hs-baseball-fan-store",
+            "collection": "sc-faith-a-m-cc-basketball",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",
@@ -32,7 +32,7 @@
           "type": "collection",
           "disabled": true,
           "settings": {
-            "collection": "delta-charter-boys-basketball",
+            "collection": "sunny-hills-hs-football-fan-store",
             "image": "{{ block.settings.collection.metafields.custom.sport_logo.value }}",
             "image_alignment": "center right",
             "content_position": "bottomLeft",

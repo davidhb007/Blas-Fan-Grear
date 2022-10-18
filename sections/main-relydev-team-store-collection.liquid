@@ -51,64 +51,12 @@ it is a copy of the store page template with some added modifications
 
 {%- assign teamName = collection.title | remove: schoolName | split: ' Fan' | first -%}
 
-{% comment %} {%- if schoolName contains 'HS' or schoolName contains 'College' or schoolName contains 'University' -%}
-  {%- assign schoolNameWords = schoolName | split: ' ' -%}
-  {%- capture schoolNameParsed -%}
-    {%- for word in schoolNameWords -%}
-      {%- if word == "HS" -%}
-        {%- assign splitter = 'HS' -%}
-        {{ word | upcase}}
-        {% break %}
-      {%- elsif word == 'University' -%}
-        {%- assign splitter = 'University' -%}
-        {{ word | capitalize }}
-        {% break %}
-      {%- elsif word == 'College' -%}
-        {%- assign splitter = 'College' -%}
-        {{ word | capitalize }}
-        {% break %}
-      {%- else -%}
-        {{ word | capitalize}}
-      {%- endif -%}
-    {%- endfor -%}
-  {%- endcapture -%}
-  {%- assign schoolName = schoolNameParsed -%}
-{%- elsif schoolName contains 'Fan' -%}
-  {%- assign schoolName = schoolName | split: " Fan" | first -%}
-{%- endif -%} {% endcomment %}
-{% comment %} Done Parsing the School Name {% endcomment %}
-
-{% comment %} Parse the name of the current sport team name {% endcomment %}
-
-{% comment %} {%- assign splitter = splitter | downcase -%}
-{%- capture currentPage -%}
-  {%- assign currentPageWords = '' -%}
-  {%- if splitter != '' -%}
-    {%- assign currentPageWords = handle | replace: "-", " " | split: splitter | last | split: ' ' -%}
-  {%- else -%}
-    {%- assign currentPageWords = handle | replace: "-", " " | split: ' ' -%}
-  {%- endif -%}
-  {%- for word in currentPageWords -%}
-    {{ word | capitalize }}
-  {%- endfor -%}
-{%- endcapture -%} {% endcomment %}
-
-{% comment %} END OF RELYDEV Liquid code to parse and display breadcrumbs {% endcomment %}
-
 <section data-section-id="{{ section.id }}" data-section-type="collection" data-section-settings='{{ section_settings }}'>
   {%- comment -%}
   --------------------------------------------------------------------------------------------------------------------
   COLLECTION INFO
   --------------------------------------------------------------------------------------------------------------------
   {%- endcomment -%}
-
-  <div class="relydev-floating-cart">
-    <a href="{{ routes.cart_url }}" data-action="open-drawer" data-drawer-id="sidebar-cart" aria-expanded="false" aria-label="Open Cart">
-      <span class="hidden-tablet-and-up">{%- render 'icon' with 'cart' -%}</span>
-      <span class="hidden-phone">{%- render 'icon' with 'cart' -%}</span>
-      <span class="Header__CartDot {% if cart.item_count > 0 %}is-visible{% endif %}"></span>
-    </a>
-  </div>
 
   <div class="relydev-breadcrumbs">
     <a href="{{ shop.url | append: schoolCollection.url }}" class="relydev-breadcrumb-link"> {{ schoolName }} </a>

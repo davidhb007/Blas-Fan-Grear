@@ -45,52 +45,6 @@
   {%- endfor -%}
 {%- endcapture -%}
 
-{% comment %} Parse the School Name {% endcomment %}
-{% comment %} {%- if schoolName contains 'HS' or schoolName contains 'College' or schoolName contains 'University' -%}
-  {%- assign schoolNameWords = schoolName | split: ' ' -%}
-  {%- capture schoolNameParsed -%}
-    {%- for word in schoolNameWords -%}
-      {%- if word == "HS" -%}
-        {%- assign splitter = 'HS' -%}
-        {{ word | upcase}}
-        {% break %}
-      {%- elsif word == 'University' -%}
-        {%- assign splitter = 'University' -%}
-        {{ word | capitalize }}
-        {% break %}
-      {%- elsif word == 'College' -%}
-        {%- assign splitter = 'College' -%}
-        {{ word | capitalize }}
-        {% break %}
-      {%- else -%}
-        {{ word | capitalize}}
-      {%- endif -%}
-    {%- endfor -%}
-  {%- endcapture -%}
-  {%- assign schoolName = schoolNameParsed -%}
-{%- elsif schoolName contains 'Fan' -%}
-  {%- assign schoolName = schoolName | split: " Fan" | first -%}
-{%- endif -%} {% endcomment %}
-{% comment %} Done Parsing the School Name {% endcomment %}
-
-{% comment %} Get and Parse name of Sport Team Collection the product belongs to {% endcomment %}
-{% comment %} {%- assign splitter = splitter | downcase -%}
-{%- assign teamLink = teamCollection.url -%}
-{%- capture teamName -%}
-  {%- assign teamNameWords = '' -%}
-  {%- if splitter != '' -%}
-    {%- assign teamNameWords = teamCollection.handle | replace: "-", " " | split: splitter | last | split: ' ' -%}
-  {%- else -%}
-    {%- assign teamNameWords = teamCollection.handle | replace: "-", " " | split: " " -%}
-  {%- endif -%}
-  {%- for word in teamNameWords -%}
-    {{ word | capitalize }}
-  {%- endfor -%}
-{%- endcapture -%}
-{% comment %} Done Parsign the Team Sport Collection name {% endcomment %}
-{% endcomment %}
-{% comment %} END OF RELYDEV Liquid code to parse and display breadcrumbs {% endcomment %}
-
 <script>
   // To power the recently viewed products section, we save the ID of the product inside the local storage
   (() => {
@@ -112,14 +66,6 @@
 
 <section class="Product Product--{{ section.settings.image_size }}" data-section-id="{{ section.id }}" data-section-type="product" data-section-settings='{{ section_settings }}'>
 
-  <div class="relydev-floating-cart">
-    <a href="{{ routes.cart_url }}" data-action="open-drawer" data-drawer-id="sidebar-cart" aria-expanded="false" aria-label="Open Cart">
-      <span class="hidden-tablet-and-up">{%- render 'icon' with 'cart' -%}</span>
-      <span class="hidden-phone">{%- render 'icon' with 'cart' -%}</span>
-      <span class="Header__CartDot {% if cart.item_count > 0 %}is-visible{% endif %}"></span>
-    </a>
-  </div>
-  
   <div class="relydev-breadcrumbs">
     <a href="{{ shop.url | append: schoolCollection.url }}" class="relydev-breadcrumb-link">{{ schoolName }}</a>
     <div class="slash">/</div>
@@ -129,7 +75,7 @@
       {{ currentPage }}
     </div>
   </div>
-
+  
   <div class="Product__Wrapper">
     {%- capture action_list_items -%}
       {%- if section.settings.enable_image_zoom -%}
